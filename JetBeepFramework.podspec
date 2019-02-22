@@ -4,9 +4,9 @@ Pod::Spec.new do |s|
     s.summary           = 'JetBeep SDK.'
     s.homepage          = 'https://github.com/jetbeep/ios-sdk'
 
-    s.author            = { 'Name' => 'contact@jetbeep.com' }
+    s.author            = { "Oleh Hordiichuk" => "oleh.hordiichuk@jetbeep.com"  }
     s.license           = { :type => 'The MIT License (MIT)', :file => 'LICENSE' }
-	s.source            = { :http => "https://github.com/jetbeep/ios-sdk.git"}
+	s.source            = { :http => "https://github.com/jetbeep/ios-sdk/raw/master/JetBeepFramework.zip"}
     s.platform          = :ios
 	
 	s.dependency 'PromisesSwift', '~> 1.2.4'
