@@ -34,9 +34,9 @@ Add ***Required background modes*** - key with description, somethings like: __A
 
 Do the same for the next keys:
 >- NSBluetoothPeripheralUsageDescription
-- NSBluetoothPeripheralUsageDescription 
-- NSLocationAlwaysAndWhenInUseUsageDescription 
-- NSLocationWhenInUseUsageDescription 
+>- NSBluetoothPeripheralUsageDescription 
+>- NSLocationAlwaysAndWhenInUseUsageDescription 
+>- NSLocationWhenInUseUsageDescription 
 
 ## Now you are ready to go! 
 
@@ -44,10 +44,10 @@ Fields that a requierd for __anonymous__ type of registration you can impolement
 
 ___Select dev server for tests!___
 
-`JetBeep.shared.devServer = true
-JetBeep.shared.registrationType = .anonymous
-JetBeep.shared.setup(appName: your app name that you can request from our side, appTokenKey: your app token key that you can request from our side)
-JetBeep.shared.serviceUUID = your app serviceUUID that you can request from our side`
+    JetBeep.shared.devServer = true
+    JetBeep.shared.registrationType = .anonymous
+    JetBeep.shared.setup(appName: your app name that you can request from our side, appTokenKey: your app token key that you can request from our side)
+    JetBeep.shared.serviceUUID = your app serviceUUID that you can request from our side
 
 Instance of barcode handler protocol, it will be used when you will provide barcodes
 
@@ -71,10 +71,10 @@ Working implementation you can find at our file: `JetBeepAnonymouseController.sw
 Fields that a requierd for __registered__ type of registration you can impolement them at your `AppDelegate`
 ___Select dev server for tests!___
 
-`JetBeep.shared.devServer = true
-JetBeep.shared.registrationType = .registered
-JetBeep.shared.setup(appName: your app name that you can request from our side, appTokenKey: your app token key that you can request from our side)
-JetBeep.shared.serviceUUID = your app serviceUUID that you can request from our side`
+    JetBeep.shared.devServer = true
+    JetBeep.shared.registrationType = .registered
+    JetBeep.shared.setup(appName: your app name that you can request from our side, appTokenKey: your app token key that you can request from our side)
+    JetBeep.shared.serviceUUID = your app serviceUUID that you can request from our side
 
 Add location manager
 
