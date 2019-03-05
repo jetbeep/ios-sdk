@@ -9,7 +9,7 @@ call
 
 `pod update` 
 
-at your terminal
+in your terminal
 
 Open your project workspace.
 
