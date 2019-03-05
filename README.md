@@ -1,4 +1,4 @@
-# Steps for project setup:#
+# Steps for project setup: #
 ### add our pod: ###
 
 `pod 'JetBeepFramework'`
