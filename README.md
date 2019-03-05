@@ -1,5 +1,5 @@
-#Steps for project setup:#
-###add our pod:##
+# Steps for project setup:#
+### add our pod: ###
 
 `pod 'JetBeepFramework'`
 
@@ -14,13 +14,13 @@ at your terminal
 Open your project workspace.
 
 Go to `Targets -> Build Settings` 
-####Select tab:  All
+#### Select tab:  All
 
 In ***Search*** field put `Enable bit code`
 
 Chanage value to: `NO`
 
-####Select tab:  Capabilities
+#### Select tab:  Capabilities
 
 Scroll to `Background Modes`:
 
@@ -38,7 +38,7 @@ Do the same for the next keys:
 - NSLocationAlwaysAndWhenInUseUsageDescription 
 - NSLocationWhenInUseUsageDescription 
 
-##Now you are ready to go! 
+## Now you are ready to go! 
 
 Fields that a requierd for __anonymous__ type of registration you can impolement them at your `AppDelegate`
 
