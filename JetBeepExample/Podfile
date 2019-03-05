@@ -1,0 +1,9 @@
+project 'JetBeepExample.xcodeproj'
+platform :ios, '10.0'
+inhibit_all_warnings!
+
+target 'JetBeepExample' do
+    use_frameworks!
+    pod 'JetBeepFramework'
+    pod 'Alamofire', '~> 4'
+end

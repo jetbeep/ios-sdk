@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		32C0ACAC61B72B1B72429155 /* Pods_JetBeepExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AB47F7CDEE0E4DDAE30211 /* Pods_JetBeepExample.framework */; };
+		34B07210222EA323007387D6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0720F222EA323007387D6 /* NotificationController.swift */; };
+		34C350FD2225430F00C405D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C350FC2225430F00C405D5 /* AppDelegate.swift */; };
+		34C350FF2225430F00C405D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C350FE2225430F00C405D5 /* ViewController.swift */; };
+		34C351022225430F00C405D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C351002225430F00C405D5 /* Main.storyboard */; };
+		34C351042225431000C405D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C351032225431000C405D5 /* Assets.xcassets */; };
+		34C351072225431000C405D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C351052225431000C405D5 /* LaunchScreen.storyboard */; };
+		34C3510F22258F7900C405D5 /* JetBeepAnonymouseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3510E22258F7900C405D5 /* JetBeepAnonymouseController.swift */; };
+		34C351132226C94700C405D5 /* JetBeepBarcodeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C351122226C94700C405D5 /* JetBeepBarcodeHandler.swift */; };
+		34C351152226D21B00C405D5 /* JetBeepRegisteredController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C351142226D21B00C405D5 /* JetBeepRegisteredController.swift */; };
+		34C351172226D28000C405D5 /* JetBeepControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C351162226D28000C405D5 /* JetBeepControllerProtocol.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		34B0720F222EA323007387D6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		34C350F92225430F00C405D5 /* JetBeepExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetBeepExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34C350FC2225430F00C405D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		34C350FE2225430F00C405D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		34C351012225430F00C405D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		34C351032225431000C405D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34C351062225431000C405D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		34C351082225431000C405D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34C3510E22258F7900C405D5 /* JetBeepAnonymouseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetBeepAnonymouseController.swift; sourceTree = "<group>"; };
+		34C351122226C94700C405D5 /* JetBeepBarcodeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetBeepBarcodeHandler.swift; sourceTree = "<group>"; };
+		34C351142226D21B00C405D5 /* JetBeepRegisteredController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetBeepRegisteredController.swift; sourceTree = "<group>"; };
+		34C351162226D28000C405D5 /* JetBeepControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetBeepControllerProtocol.swift; sourceTree = "<group>"; };
+		3E39DFABD5564EBE85269860 /* Pods-JetBeepExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.debug.xcconfig"; sourceTree = "<group>"; };
+		46AB47F7CDEE0E4DDAE30211 /* Pods_JetBeepExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetBeepExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA74587E64A078CD97F866B /* Pods-JetBeepExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		34C350F62225430F00C405D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32C0ACAC61B72B1B72429155 /* Pods_JetBeepExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20E52C552A22347101851D24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46AB47F7CDEE0E4DDAE30211 /* Pods_JetBeepExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3199BCB2BA8113D19155E4F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E39DFABD5564EBE85269860 /* Pods-JetBeepExample.debug.xcconfig */,
+				CEA74587E64A078CD97F866B /* Pods-JetBeepExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		34C350F02225430F00C405D5 = {
+			isa = PBXGroup;
+			children = (
+				34C350FB2225430F00C405D5 /* JetBeepExample */,
+				34C350FA2225430F00C405D5 /* Products */,
+				3199BCB2BA8113D19155E4F8 /* Pods */,
+				20E52C552A22347101851D24 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		34C350FA2225430F00C405D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34C350F92225430F00C405D5 /* JetBeepExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34C350FB2225430F00C405D5 /* JetBeepExample */ = {
+			isa = PBXGroup;
+			children = (
+				34C350FC2225430F00C405D5 /* AppDelegate.swift */,
+				34C350FE2225430F00C405D5 /* ViewController.swift */,
+				34C351002225430F00C405D5 /* Main.storyboard */,
+				34C351032225431000C405D5 /* Assets.xcassets */,
+				34C351052225431000C405D5 /* LaunchScreen.storyboard */,
+				34C351082225431000C405D5 /* Info.plist */,
+				34C3510E22258F7900C405D5 /* JetBeepAnonymouseController.swift */,
+				34C351122226C94700C405D5 /* JetBeepBarcodeHandler.swift */,
+				34C351142226D21B00C405D5 /* JetBeepRegisteredController.swift */,
+				34C351162226D28000C405D5 /* JetBeepControllerProtocol.swift */,
+				34B0720F222EA323007387D6 /* NotificationController.swift */,
+			);
+			path = JetBeepExample;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		34C350F82225430F00C405D5 /* JetBeepExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34C3510B2225431000C405D5 /* Build configuration list for PBXNativeTarget "JetBeepExample" */;
+			buildPhases = (
+				7366EE325ECB523C472F47E3 /* [CP] Check Pods Manifest.lock */,
+				34C350F52225430F00C405D5 /* Sources */,
+				34C350F62225430F00C405D5 /* Frameworks */,
+				34C350F72225430F00C405D5 /* Resources */,
+				192FD52D91A4BE1D5F4BC721 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JetBeepExample;
+			productName = JetBeepExample;
+			productReference = 34C350F92225430F00C405D5 /* JetBeepExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		34C350F12225430F00C405D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Max Tymchii";
+				TargetAttributes = {
+					34C350F82225430F00C405D5 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 34C350F42225430F00C405D5 /* Build configuration list for PBXProject "JetBeepExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 34C350F02225430F00C405D5;
+			productRefGroup = 34C350FA2225430F00C405D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				34C350F82225430F00C405D5 /* JetBeepExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		34C350F72225430F00C405D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34C351072225431000C405D5 /* LaunchScreen.storyboard in Resources */,
+				34C351042225431000C405D5 /* Assets.xcassets in Resources */,
+				34C351022225430F00C405D5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		192FD52D91A4BE1D5F4BC721 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${PODS_ROOT}/JetBeepFramework/JetBeepFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JetBeepFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7366EE325ECB523C472F47E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JetBeepExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		34C350F52225430F00C405D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34C3510F22258F7900C405D5 /* JetBeepAnonymouseController.swift in Sources */,
+				34C350FF2225430F00C405D5 /* ViewController.swift in Sources */,
+				34C351152226D21B00C405D5 /* JetBeepRegisteredController.swift in Sources */,
+				34B07210222EA323007387D6 /* NotificationController.swift in Sources */,
+				34C351172226D28000C405D5 /* JetBeepControllerProtocol.swift in Sources */,
+				34C350FD2225430F00C405D5 /* AppDelegate.swift in Sources */,
+				34C351132226C94700C405D5 /* JetBeepBarcodeHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		34C351002225430F00C405D5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34C351012225430F00C405D5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		34C351052225431000C405D5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34C351062225431000C405D5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		34C351092225431000C405D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		34C3510A2225431000C405D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		34C3510C2225431000C405D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E39DFABD5564EBE85269860 /* Pods-JetBeepExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2AUX883V6A;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = JetBeepExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sebek.com.JetBeepExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		34C3510D2225431000C405D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEA74587E64A078CD97F866B /* Pods-JetBeepExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2AUX883V6A;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = JetBeepExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sebek.com.JetBeepExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		34C350F42225430F00C405D5 /* Build configuration list for PBXProject "JetBeepExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34C351092225431000C405D5 /* Debug */,
+				34C3510A2225431000C405D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34C3510B2225431000C405D5 /* Build configuration list for PBXNativeTarget "JetBeepExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34C3510C2225431000C405D5 /* Debug */,
+				34C3510D2225431000C405D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 34C350F12225430F00C405D5 /* Project object */;
+}
