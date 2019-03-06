@@ -1,3 +1,6 @@
+# Hardware setup #
+https://drive.google.com/drive/u/1/folders/1exPvE0fJYBYEf-XRj5r4i4IQqMalLuma
+
 # Steps for project setup: #
 ### add our pod: ###
 
