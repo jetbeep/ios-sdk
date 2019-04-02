@@ -16,13 +16,6 @@ in your terminal
 
 Open your project workspace.
 
-Go to `Targets -> Build Settings` 
-#### Select tab:  All
-
-In ***Search*** field put `Enable bit code`
-
-Chanage value to: `NO`
-
 #### Select tab:  Capabilities
 
 Scroll to `Background Modes`:
