@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		32C0ACAC61B72B1B72429155 /* Pods_JetBeepExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AB47F7CDEE0E4DDAE30211 /* Pods_JetBeepExample.framework */; };
 		34B07210222EA323007387D6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0720F222EA323007387D6 /* NotificationController.swift */; };
+		34B50EED225E33970000C397 /* BackgroundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B50EEC225E33960000C397 /* BackgroundController.swift */; };
 		34C350FD2225430F00C405D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C350FC2225430F00C405D5 /* AppDelegate.swift */; };
 		34C350FF2225430F00C405D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C350FE2225430F00C405D5 /* ViewController.swift */; };
 		34C351022225430F00C405D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C351002225430F00C405D5 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		34B0720F222EA323007387D6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		34B50EEC225E33960000C397 /* BackgroundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundController.swift; sourceTree = "<group>"; };
 		34C350F92225430F00C405D5 /* JetBeepExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetBeepExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C350FC2225430F00C405D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34C350FE2225430F00C405D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		34C350FB2225430F00C405D5 /* JetBeepExample */ = {
 			isa = PBXGroup;
 			children = (
+				34B50EEC225E33960000C397 /* BackgroundController.swift */,
 				34C350FC2225430F00C405D5 /* AppDelegate.swift */,
 				34C350FE2225430F00C405D5 /* ViewController.swift */,
 				34C351002225430F00C405D5 /* Main.storyboard */,
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34C3510F22258F7900C405D5 /* JetBeepAnonymouseController.swift in Sources */,
+				34B50EED225E33970000C397 /* BackgroundController.swift in Sources */,
 				34C350FF2225430F00C405D5 /* ViewController.swift in Sources */,
 				34C351152226D21B00C405D5 /* JetBeepRegisteredController.swift in Sources */,
 				34B07210222EA323007387D6 /* NotificationController.swift in Sources */,
