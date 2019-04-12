@@ -183,7 +183,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${PODS_ROOT}/JetBeepFramework/JetBeepFramework.framework",
@@ -204,7 +204,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7366EE325ECB523C472F47E3 /* [CP] Check Pods Manifest.lock */ = {
