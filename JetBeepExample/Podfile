@@ -5,5 +5,5 @@ inhibit_all_warnings!
 target 'JetBeepExample' do
     use_frameworks!
     pod 'JetBeepFramework'
-    pod 'Alamofire', '~> 4'
+    pod 'Alamofire'
 end
