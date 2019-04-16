@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name              = 'JetBeepFramework'
-    s.version           = '1.0.5'
+    s.version           = '1.0.6'
     s.summary           = 'JetBeep SDK.'
     s.homepage          = 'https://github.com/jetbeep/ios-sdk'
 
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     s.license           = { :type => 'The MIT License (MIT)', :file => 'LICENSE' }
 	s.source            = { :http => "https://github.com/jetbeep/ios-sdk/raw/master/JetBeepFramework.zip"}
     s.platform          = :ios
-	s.swift_version     = '4.0'
+	s.swift_version     = '5.0'
 	
 	s.dependency 'PromisesSwift', '~> 1.2.4'
 	s.dependency 'CryptoSwift', '~> 1'	
