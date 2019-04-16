@@ -83,7 +83,7 @@ final class JetBeepRegisteredController: NSObject, JetBeepControllerProtocol {
             switch event {
             case .LoyaltyNotFound(_):
                 Log.w("loyalty not found")
-            case .LoyaltyTransferred(_, _, _):
+            case .LoyaltyTransferred(_, _, _, _):
                 Log.i("loyalty transferred")
             default:
                 Log.w("unhandler event")
