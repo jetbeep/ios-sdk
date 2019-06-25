@@ -1,0 +1,26 @@
+To track device changes you need to subscribe on events.
+let _ = DeviceConnectionController.shared.subscribe { event in
+            switch event {
+            case .found(let device):
+                print("Found Device \(device.identifier) shopId \(device.shopId)")
+            case .connect(let device):
+                print("Connect Device \(device.identifier) shopId \(device.shopId)")
+            case .update(let device):
+                print("Update Device \(device.identifier) shopId \(device.shopId)")
+            case .failToConnect(let device, let error):
+                print("Fail To Connect Device \(device?.identifier) shopId \(device?.shopId) error \(error)")
+            case .lost(let device):
+                print("Lost Device \(device.identifier) shopId \(device.shopId)")
+            }
+        }
+
+To get current state of devices you need just call 
+`DeviceStorage.shared.currentStorageState()` it gonna return you dictionary [UInt32: Device]
+UInt32 - ShopId
+Device - info about current peripheral device. (shop id, DeviceState, identifier)
+
+If you want to connect custom device you need just need to call
+DeviceConnectionController.shared.connect(shopId) - (1 device 1 shop)
+But `DeviceState` of this machine should be 
+connectable, driverMode, openedSession
+
