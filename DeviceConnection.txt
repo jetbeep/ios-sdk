@@ -1,4 +1,6 @@
+DeviceConnectionController.shared.startMonitoring()
 To track device changes you need to subscribe on events.
+
 ```
 let _ = DeviceConnectionController.shared.subscribe { event in
             switch event {
@@ -22,5 +24,6 @@ To get current state of devices you need just call
 
 If you want to connect custom device you need just need to call
 `DeviceConnectionController.shared.connect(shopId)` - (1 device 1 shop)
+`DeviceConnectionController.shared.disconnect(shopId)`
 But `DeviceState` of this machine should be 
 connectable, driverMode, openedSession
