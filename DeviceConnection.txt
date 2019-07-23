@@ -18,9 +18,16 @@ let _ = DeviceConnectionController.shared.subscribe { event in
         }
 ```
 To get current state of devices you need just call 
-`DeviceStorage.shared.currentStorageState()` it gonna return you dictionary `[UInt32: Device]`
+
+        DeviceStorage.shared.currentStorageState(merchant: 43).then { result in
+            print(result)
+        }
+ it gonna return you dictionary `[UInt32: Device]` 
 `UInt32` - `ShopId`
 `Device` - info about current peripheral device. (shop id, DeviceState, identifier)
+
+To listen devices changes of custom merchant you need to do next
+`DeviceConnectionController.shared.scaningMerchantId = merchantID`
 
 If you want to connect custom device you need just need to call
 `DeviceConnectionController.shared.connect(shopId)` - (1 device 1 shop)
