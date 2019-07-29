@@ -12,7 +12,7 @@ let _ = DeviceConnectionController.shared.subscribe { event in
                 print("Update Device \(device.identifier) shopId \(device.shopId)")
             case .failToConnect(let device, let error):
                 print("Fail To Connect Device \(device?.identifier) shopId \(device?.shopId) error \(error)")
-            case .lost(let device):
+            case .disconnect(let device, let error):
                 print("Lost Device \(device.identifier) shopId \(device.shopId)")
             }
         }
