@@ -20,6 +20,8 @@ final class JetBeepRegisteredController: NSObject, JetBeepControllerProtocol {
     private override init() {}
     internal var peripheralManager: CBPeripheralManager!
     let locationManager: CLLocationManager! = CLLocationManager()
+    private var locationsCallbackId = defaultEventSubscribeID
+    private var loyaltyCallbackId = defaultEventSubscribeID
     
     func setup() {
         JetBeep.shared.devServer = true
@@ -57,8 +59,7 @@ final class JetBeepRegisteredController: NSObject, JetBeepControllerProtocol {
     }
     
     func subscribeOnLocationEvents() {
-        
-        let _ = JBLocations.shared.subscribe { event in
+        locationsCallbackId = JBLocations.shared.subscribe { event in
             switch event {
             case .MerchantEntered(let merchant):
                 Log.d("Entered merchant: \(merchant.name)")
@@ -74,8 +75,7 @@ final class JetBeepRegisteredController: NSObject, JetBeepControllerProtocol {
     
     
     func subscribeOnLoyality() {
-        
-        let _ = JBBeeper.shared.subscribe { event in
+        loyaltyCallbackId = JBBeeper.shared.subscribe { event in
             switch event {
             case .LoyaltyNotFound(_):
                 Log.w("loyalty not found")
@@ -85,6 +85,11 @@ final class JetBeepRegisteredController: NSObject, JetBeepControllerProtocol {
                 Log.w("unhandler event")
             }
         }
+    }
+    
+    deinit {
+        JBBeeper.shared.unsubscribe(loyaltyCallbackId)
+        JBLocations.shared.unsubscribe(locationsCallbackId)
     }
     
 }

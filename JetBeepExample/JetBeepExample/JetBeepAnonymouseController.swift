@@ -20,9 +20,11 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
     }
 
     private override init() {}
+    
     let barcodeHandler = JetBeepBarcodeHandler()
     internal var peripheralManager: CBPeripheralManager!
     let locationManager: CLLocationManager! = CLLocationManager()
+    private var locationsCallbackId = defaultEventSubscribeID
 
     func setup() {
         JetBeep.shared.devServer = true
@@ -59,7 +61,7 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
 
     func subscribeOnLocationEvents() {
 
-        let _ = JBLocations.shared.subscribe { event in
+        locationsCallbackId = JBLocations.shared.subscribe { event in
             switch event {
             case .MerchantEntered(let merchant):
                 Log.d("Entered merchant: \(merchant.name)")
@@ -76,6 +78,10 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
 
     func subscribeOnLoyality() {
         // we are not provide loyality cards for unregistered sdk's
+    }
+    
+    deinit {
+        JBLocations.shared.unsubscribe(locationsCallbackId)
     }
     
 }

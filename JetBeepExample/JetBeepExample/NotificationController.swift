@@ -14,7 +14,7 @@ import Promises
 final class NotificationController {
     static let shared = NotificationController()
     private init() {}
-    private var callbackID = 0
+    private var callbackID = defaultEventSubscribeID
     
     func subscribeOnPushNotifications() {
         let center = UNUserNotificationCenter.current()
