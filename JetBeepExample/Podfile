@@ -5,5 +5,6 @@ inhibit_all_warnings!
 target 'JetBeepExample' do
     use_frameworks!
     pod 'JetBeepFramework'
+#    pod 'JetBeepFramework', path: '../../iOS'
     pod 'Alamofire'
 end
