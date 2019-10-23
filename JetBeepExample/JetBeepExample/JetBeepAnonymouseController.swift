@@ -63,16 +63,12 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
             switch event {
             case .MerchantEntered(let merchant):
                 Log.d("Entered merchant: \(merchant.name)")
-                NotificationController.shared.showNotification(title: "Entered merchant", body: "\(merchant.name)")
             case .ShopEntered(let shop, _):
                 Log.d("Entered shop: \(shop.name)")
-                NotificationController.shared.showNotification(title: "Entered shop", body: "\(shop.name)")
             case .ShopExited(let shop, _):
                 Log.d("Exited shop: \(shop.name)")
-                NotificationController.shared.showNotification(title: "Exited shop", body: "\(shop.name)")
             case .MerchantExited(let merchant):
                 Log.d("Exited merchant: \(merchant.name)")
-                NotificationController.shared.showNotification(title: "Exited merchant", body: "\(merchant.name)")
             }
         }
     }

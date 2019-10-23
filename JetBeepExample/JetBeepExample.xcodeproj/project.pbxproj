@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		32C0ACAC61B72B1B72429155 /* Pods_JetBeepExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AB47F7CDEE0E4DDAE30211 /* Pods_JetBeepExample.framework */; };
+		3430F9AB23605499000F5AF5 /* BaseNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430F9AA23605499000F5AF5 /* BaseNotification.swift */; };
 		34B07210222EA323007387D6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0720F222EA323007387D6 /* NotificationController.swift */; };
 		34B50EED225E33970000C397 /* BackgroundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B50EEC225E33960000C397 /* BackgroundController.swift */; };
 		34C350FD2225430F00C405D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C350FC2225430F00C405D5 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3430F9AA23605499000F5AF5 /* BaseNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNotification.swift; sourceTree = "<group>"; };
 		34B0720F222EA323007387D6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		34B50EEC225E33960000C397 /* BackgroundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundController.swift; sourceTree = "<group>"; };
 		34C350F92225430F00C405D5 /* JetBeepExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetBeepExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				34B50EEC225E33960000C397 /* BackgroundController.swift */,
+				3430F9AA23605499000F5AF5 /* BaseNotification.swift */,
 				34C350FC2225430F00C405D5 /* AppDelegate.swift */,
 				34C350FE2225430F00C405D5 /* ViewController.swift */,
 				34C351002225430F00C405D5 /* Main.storyboard */,
@@ -181,26 +184,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
-				"${PODS_ROOT}/JetBeepFramework/JetBeepFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
-				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JetBeepFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -243,6 +231,7 @@
 				34B07210222EA323007387D6 /* NotificationController.swift in Sources */,
 				34C351172226D28000C405D5 /* JetBeepControllerProtocol.swift in Sources */,
 				34C350FD2225430F00C405D5 /* AppDelegate.swift in Sources */,
+				3430F9AB23605499000F5AF5 /* BaseNotification.swift in Sources */,
 				34C351132226C94700C405D5 /* JetBeepBarcodeHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
