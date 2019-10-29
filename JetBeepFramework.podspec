@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name              = 'JetBeepFramework'
-    s.version           = '1.0.38'
+    s.version           = '1.0.39'
     s.summary           = 'JetBeep SDK.'
     s.homepage          = 'https://github.com/jetbeep/ios-sdk'
 
