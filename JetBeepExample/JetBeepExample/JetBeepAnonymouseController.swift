@@ -51,7 +51,8 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
     }
 
     func startMonitoring() {
-        Log.d("monitoring: \(JBLocations.shared.startMonitoring())")
+        //You can select two types of flow bluetooth or via location
+        Log.d("monitoring: \(JBLocations.shared.startMonitoringFlow(.bluetooth))")
         do {
             try JBBeeper.shared.start()
         } catch {
@@ -63,13 +64,13 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
 
         locationsCallbackId = JBLocations.shared.subscribe { event in
             switch event {
-            case .MerchantEntered(let merchant):
+            case .merchantEntered(let merchant):
                 Log.d("Entered merchant: \(merchant.name)")
-            case .ShopEntered(let shop, _):
+            case .shopEntered(let shop, _):
                 Log.d("Entered shop: \(shop.name)")
-            case .ShopExited(let shop, _):
+            case .shopExited(let shop, _):
                 Log.d("Exited shop: \(shop.name)")
-            case .MerchantExited(let merchant):
+            case .merchantExited(let merchant):
                 Log.d("Exited merchant: \(merchant.name)")
             }
         }
