@@ -73,6 +73,17 @@ ___Select dev server for tests!___
     JetBeep.shared.setup(appName: your app name that you can request from our side, appTokenKey: your app token key that you can request from our side)
     JetBeep.shared.serviceUUID = your app serviceUUID that you can request from our side
 
+___Don't forget to fetch data from server side with set of shop id's, merchant id's, etc___
+
+```
+JetBeep.shared.sync()
+            .then {
+                //Add your code if needed
+            }.catch { _ in
+                //Add your code if needed
+        }
+```
+
 Add location manager
 
 `locationManager.delegate = self
