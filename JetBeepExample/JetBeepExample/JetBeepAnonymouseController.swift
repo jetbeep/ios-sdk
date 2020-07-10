@@ -27,18 +27,20 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
     private var locationsCallbackId = defaultEventSubscribeID
 
     func setup() {
-        JetBeep.shared.devServer = true
+        JetBeep.shared.devServer = false
         JetBeep.shared.registrationType = .anonymous
-        JetBeep.shared.setup(appName: "jetbeep-test-2", appTokenKey: "6538c072-bf9e-41f6-96fc-d6de16f46fa0")
-        JetBeep.shared.serviceUUID = "0179e"
+        JetBeep.shared.setup(appName: "fishka", appTokenKey: "6f42b634-471e-4b7f-9eef-0e110ee7b2b9")
+        JetBeep.shared.serviceUUID = "017a0"
+        JBLocations.shared.startMonitoringFlow(.bluetooth)
         JetBeep.shared.barcodeRequestHandler = barcodeHandler
         barcodeHandler.delegate = self
-        JBAnalytics.shared.enabled = true
+
         Log.isLoggingEnabled = true
 
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
+//        locationManager.delegate = self
+//        locationManager.requestAlwaysAuthorization()
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
+        JBAnalytics.shared.enabled = false
     }
 
     func cacheData() {
@@ -46,7 +48,7 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
             .then { _ in
                 Log.d("cached successfully")
             }.catch { e in
-                Log.w("unable to cache: \(e)")
+                Log.w("!!!!!unable to cache: \(e)")
         }
     }
 

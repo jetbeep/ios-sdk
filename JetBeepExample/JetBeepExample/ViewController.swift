@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var textView: UITextView?
     private var logStack: String = ""
 
-    let sdkType: JetBeepRegistrationType = .registered
+    let sdkType: JetBeepRegistrationType = .anonymous
     lazy var controller: JetBeepControllerProtocol = {
         switch sdkType {
         case .anonymous:
