@@ -33,3 +33,4 @@ Carthage/Build
 
 .DS_Store
 Podfile.lock
+JetBeepExample.xcscheme
