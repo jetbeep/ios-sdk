@@ -33,7 +33,7 @@ final class NotificationController {
     func execute() {
         callbackID = NotificationDispatcher.shared.subscribe { event in
                switch event {
-               case .ready(let model):
+               case .ready(let model, let merchant, let shop):
                    let logMessage = "Show notification for merchant \(model.merchantId)"
                    Log.i(logMessage)
                    
