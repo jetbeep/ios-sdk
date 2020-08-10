@@ -33,10 +33,10 @@ final class NotificationController {
     func execute() {
         callbackID = NotificationDispatcher.shared.subscribe { event in
                switch event {
-               case .ready(let model):
-                   let logMessage = "Show notification for merchant \(model.merchantId)"
+               case .ready(let model, let merchant, let shop):
+                let logMessage = "Show notification for merchant \(model.merchantId) + shopID \(model.shopId)"
                    Log.i(logMessage)
-                   
+
                    all(model.merchant, model.info)
                        .then{ result, info in
                            guard let merchant = result else {

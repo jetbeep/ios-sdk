@@ -66,13 +66,13 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
 
         locationsCallbackId = JBLocations.shared.subscribe { event in
             switch event {
-            case .merchantEntered(_, let merchant):
-                Log.d("Entered merchant: \(merchant.name)")
+            case .merchantEntered(let merchant, let shop):
+                Log.d("Entered merchant: \(merchant.name) \(shop.id) \(shop.domainId)")
             case .shopEntered(let shop, _):
-                Log.d("Entered shop: \(shop.name)")
+                Log.d("Entered shop: \(shop.name) \(shop.id) \(shop.domainId)")
             case .shopExited(let shop, _):
                 Log.d("Exited shop: \(shop.name)")
-            case .merchantExited(_, let merchant):
+            case .merchantExited(let merchant):
                 Log.d("Exited merchant: \(merchant.name)")
             }
         }
