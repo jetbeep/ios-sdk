@@ -62,13 +62,13 @@ final class JetBeepRegisteredController: NSObject, JetBeepControllerProtocol {
     func subscribeOnLocationEvents() {
         locationsCallbackId = JBLocations.shared.subscribe { event in
             switch event {
-            case .merchantEntered(let merchant):
+            case .merchantEntered(_ , let merchant):
                 Log.d("Entered merchant: \(merchant.name)")
             case .shopEntered(let shop, _):
                 Log.d("Entered shop: \(shop.name)")
             case .shopExited(let shop, _):
                 Log.d("Exited shop: \(shop.name)")
-            case .merchantExited(let merchant):
+            case .merchantExited(_ , let merchant):
                 Log.d("Exited merchant: \(merchant.name)")
             }
         }
@@ -78,7 +78,7 @@ final class JetBeepRegisteredController: NSObject, JetBeepControllerProtocol {
     func subscribeOnLoyality() {
         loyaltyCallbackId = JBBeeper.shared.subscribe { event in
             switch event {
-            case .LoyaltyNotFound(_):
+            case .LoyaltyNotFound:
                 Log.w("loyalty not found")
             case .LoyaltyTransferred(_, _, _, _):
                 Log.i("loyalty transferred")
