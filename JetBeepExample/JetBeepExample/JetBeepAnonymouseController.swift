@@ -29,8 +29,8 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
     func setup() {
         JetBeep.shared.devServer = false
         JetBeep.shared.registrationType = .anonymous
-        JetBeep.shared.setup(appName: "fishka", appTokenKey: "6f42b634-471e-4b7f-9eef-0e110ee7b2b9")
-        JetBeep.shared.serviceUUID = "017a0"
+        JetBeep.shared.setup(appName: "transpod", appTokenKey: "efeae1ef-bf88-489d-8671-d7843eac96e2")
+        JetBeep.shared.serviceUUID = "017a3"
         JBLocations.shared.startMonitoringFlow(.bluetooth)
         JetBeep.shared.barcodeRequestHandler = barcodeHandler
         barcodeHandler.delegate = self
@@ -47,6 +47,9 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
         JetBeep.shared.sync()
             .then { _ in
                 Log.d("cached successfully")
+                JBRepository.shared.merchants.fromCache().then { merchants in
+                    Log.i("Merchants ====>>>> \(merchants)")
+                }
             }.catch { e in
                 Log.w("!!!!!unable to cache: \(e)")
         }
