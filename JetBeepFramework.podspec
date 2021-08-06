@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name              = 'JetBeepFramework'
-    s.version           = '1.0.64'
+    s.version           = '1.0.65'
     s.summary           = 'JetBeep SDK.'
     s.homepage          = 'https://github.com/jetbeep/ios-sdk'
 
@@ -14,11 +14,12 @@ Pod::Spec.new do |s|
     s.platform          = :ios
 	s.swift_version     = '5.0'
 	
-	s.dependency 'PromisesSwift', '~> 1.2.4'
-	s.dependency 'CryptoSwift', '~> 1'	
-	s.dependency 'SQLite.swift', '~> 0.11.5'
-	s.dependency 'Repeat', '~> 0.5.7'
-	s.dependency 'DeepDiff', '~> 2.2.0'
+	s.dependency 'PromisesSwift'
+	s.dependency 'CryptoSwift'
+	s.dependency 'SQLite.swift'
+	s.dependency 'Repeat'
+	s.dependency 'DeepDiff'
+    s.dependency 'CocoaLumberjack/Swift'
 
 
     s.ios.deployment_target = '10.0'
