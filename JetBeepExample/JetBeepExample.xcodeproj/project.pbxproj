@@ -19,11 +19,11 @@
 		34C351132226C94700C405D5 /* JetBeepBarcodeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C351122226C94700C405D5 /* JetBeepBarcodeHandler.swift */; };
 		34C351152226D21B00C405D5 /* JetBeepRegisteredController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C351142226D21B00C405D5 /* JetBeepRegisteredController.swift */; };
 		34C351172226D28000C405D5 /* JetBeepControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C351162226D28000C405D5 /* JetBeepControllerProtocol.swift */; };
-		84C33400A4C9F2CA25816F25 /* Pods_JetBeepExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AFD682097753B35397054E /* Pods_JetBeepExample.framework */; };
+		628B6D050DF41BFFD731C1AF /* Pods_JetBeepExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483D2DF3E6E2FA6E4E69DBFE /* Pods_JetBeepExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		07AFD682097753B35397054E /* Pods_JetBeepExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetBeepExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23BC0EE5498C7A27F3BA8C8C /* Pods-JetBeepExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.release.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.release.xcconfig"; sourceTree = "<group>"; };
 		3430F9AA23605499000F5AF5 /* BaseNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNotification.swift; sourceTree = "<group>"; };
 		34B0720F222EA323007387D6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		34B50EEC225E33960000C397 /* BackgroundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundController.swift; sourceTree = "<group>"; };
@@ -38,8 +38,8 @@
 		34C351122226C94700C405D5 /* JetBeepBarcodeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetBeepBarcodeHandler.swift; sourceTree = "<group>"; };
 		34C351142226D21B00C405D5 /* JetBeepRegisteredController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetBeepRegisteredController.swift; sourceTree = "<group>"; };
 		34C351162226D28000C405D5 /* JetBeepControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetBeepControllerProtocol.swift; sourceTree = "<group>"; };
-		BA3AAE4A9BD04CDA78D23246 /* Pods-JetBeepExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.release.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.release.xcconfig"; sourceTree = "<group>"; };
-		FA08391A2A5768E798D1A767 /* Pods-JetBeepExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.debug.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.debug.xcconfig"; sourceTree = "<group>"; };
+		483D2DF3E6E2FA6E4E69DBFE /* Pods_JetBeepExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetBeepExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		937EA89927B928AFB0B6E08F /* Pods-JetBeepExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.debug.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C33400A4C9F2CA25816F25 /* Pods_JetBeepExample.framework in Frameworks */,
+				628B6D050DF41BFFD731C1AF /* Pods_JetBeepExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,8 +59,8 @@
 			children = (
 				34C350FB2225430F00C405D5 /* JetBeepExample */,
 				34C350FA2225430F00C405D5 /* Products */,
-				3C84E938C71464C266E1D755 /* Pods */,
-				460843A11DC34C5C6EB39639 /* Frameworks */,
+				7DA2E471FB688CC5DC81ED35 /* Pods */,
+				B6C104D38194D46E5790EB18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,20 +92,20 @@
 			path = JetBeepExample;
 			sourceTree = "<group>";
 		};
-		3C84E938C71464C266E1D755 /* Pods */ = {
+		7DA2E471FB688CC5DC81ED35 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FA08391A2A5768E798D1A767 /* Pods-JetBeepExample.debug.xcconfig */,
-				BA3AAE4A9BD04CDA78D23246 /* Pods-JetBeepExample.release.xcconfig */,
+				937EA89927B928AFB0B6E08F /* Pods-JetBeepExample.debug.xcconfig */,
+				23BC0EE5498C7A27F3BA8C8C /* Pods-JetBeepExample.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		460843A11DC34C5C6EB39639 /* Frameworks */ = {
+		B6C104D38194D46E5790EB18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				07AFD682097753B35397054E /* Pods_JetBeepExample.framework */,
+				483D2DF3E6E2FA6E4E69DBFE /* Pods_JetBeepExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,11 +117,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34C3510B2225431000C405D5 /* Build configuration list for PBXNativeTarget "JetBeepExample" */;
 			buildPhases = (
-				013F153C381A45198401782C /* [CP] Check Pods Manifest.lock */,
+				58B34B11C384AC3EDBB18E25 /* [CP] Check Pods Manifest.lock */,
 				34C350F52225430F00C405D5 /* Sources */,
 				34C350F62225430F00C405D5 /* Frameworks */,
 				34C350F72225430F00C405D5 /* Resources */,
-				6C61D1F9EFD4322D52DBAF04 /* [CP] Embed Pods Frameworks */,
+				F28FFAC521FC6E085EB84669 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,7 +179,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		013F153C381A45198401782C /* [CP] Check Pods Manifest.lock */ = {
+		58B34B11C384AC3EDBB18E25 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -201,7 +201,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6C61D1F9EFD4322D52DBAF04 /* [CP] Embed Pods Frameworks */ = {
+		F28FFAC521FC6E085EB84669 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -377,7 +377,7 @@
 		};
 		34C3510C2225431000C405D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA08391A2A5768E798D1A767 /* Pods-JetBeepExample.debug.xcconfig */;
+			baseConfigurationReference = 937EA89927B928AFB0B6E08F /* Pods-JetBeepExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -398,7 +398,7 @@
 		};
 		34C3510D2225431000C405D5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA3AAE4A9BD04CDA78D23246 /* Pods-JetBeepExample.release.xcconfig */;
+			baseConfigurationReference = 23BC0EE5498C7A27F3BA8C8C /* Pods-JetBeepExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
