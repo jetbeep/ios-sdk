@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name              = 'JetBeepFramework'
-    s.version           = '1.0.73'
+    s.version           = '1.0.74'
     s.summary           = 'JetBeep SDK.'
     s.homepage          = 'https://github.com/jetbeep/ios-sdk'
 
@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
     s.dependency 'CocoaLumberjack/Swift'
 
 
-    s.ios.deployment_target = '10.0'
+    s.ios.deployment_target = '13.0'
     s.ios.vendored_frameworks = 'JetBeepFramework.framework'
 end  
