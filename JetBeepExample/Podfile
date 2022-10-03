@@ -1,10 +1,10 @@
 project 'JetBeepExample.xcodeproj'
-platform :ios, '10.0'
+platform :ios, '11.0'
 inhibit_all_warnings!
 
 target 'JetBeepExample' do
     use_frameworks!
     pod 'JetBeepFramework'
-#    pod 'JetBeepFramework', path: '../../iOS'
+   # pod 'JetBeepFramework', path: '../../iOS'
     pod 'Alamofire'
 end
