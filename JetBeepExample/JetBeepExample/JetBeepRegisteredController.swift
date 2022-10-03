@@ -24,7 +24,7 @@ final class JetBeepRegisteredController: NSObject, JetBeepControllerProtocol {
     private var loyaltyCallbackId = defaultEventSubscribeID
     
     func setup() {
-        JetBeep.shared.devServer = true
+        JetBeep.shared.serverType = .development
         JetBeep.shared.registrationType = .registered
         JetBeep.shared.setup(appName: "jetbeep-test", appTokenKey: "35117dd1-a7bf-4167-b154-86626f3fac17")
         //You need go through registration process to get valid auth-token: "769b70f4-043d-4b51-a748-0f32423b6cc8"
@@ -78,9 +78,9 @@ final class JetBeepRegisteredController: NSObject, JetBeepControllerProtocol {
     func subscribeOnLoyality() {
         loyaltyCallbackId = JBBeeper.shared.subscribe { event in
             switch event {
-            case .LoyaltyNotFound:
+            case .loyaltyNotFound:
                 Log.w("loyalty not found")
-            case .LoyaltyTransferred(_, _, _, _):
+            case .loyaltyTransferred(_, _, _, _):
                 Log.i("loyalty transferred")
             default:
                 Log.w("unhandler event")

@@ -19,11 +19,10 @@
 		34C351132226C94700C405D5 /* JetBeepBarcodeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C351122226C94700C405D5 /* JetBeepBarcodeHandler.swift */; };
 		34C351152226D21B00C405D5 /* JetBeepRegisteredController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C351142226D21B00C405D5 /* JetBeepRegisteredController.swift */; };
 		34C351172226D28000C405D5 /* JetBeepControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C351162226D28000C405D5 /* JetBeepControllerProtocol.swift */; };
-		628B6D050DF41BFFD731C1AF /* Pods_JetBeepExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483D2DF3E6E2FA6E4E69DBFE /* Pods_JetBeepExample.framework */; };
+		5B5938A9280B5ED0511C87B2 /* Pods_JetBeepExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA02746B65256D301821DEE /* Pods_JetBeepExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		23BC0EE5498C7A27F3BA8C8C /* Pods-JetBeepExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.release.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.release.xcconfig"; sourceTree = "<group>"; };
 		3430F9AA23605499000F5AF5 /* BaseNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNotification.swift; sourceTree = "<group>"; };
 		34B0720F222EA323007387D6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		34B50EEC225E33960000C397 /* BackgroundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundController.swift; sourceTree = "<group>"; };
@@ -38,8 +37,9 @@
 		34C351122226C94700C405D5 /* JetBeepBarcodeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetBeepBarcodeHandler.swift; sourceTree = "<group>"; };
 		34C351142226D21B00C405D5 /* JetBeepRegisteredController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetBeepRegisteredController.swift; sourceTree = "<group>"; };
 		34C351162226D28000C405D5 /* JetBeepControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetBeepControllerProtocol.swift; sourceTree = "<group>"; };
-		483D2DF3E6E2FA6E4E69DBFE /* Pods_JetBeepExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetBeepExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		937EA89927B928AFB0B6E08F /* Pods-JetBeepExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.debug.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.debug.xcconfig"; sourceTree = "<group>"; };
+		6232016C84C02865DA3D304A /* Pods-JetBeepExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.debug.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.debug.xcconfig"; sourceTree = "<group>"; };
+		7BD47E8FC798D3C4993EB746 /* Pods-JetBeepExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.release.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.release.xcconfig"; sourceTree = "<group>"; };
+		DCA02746B65256D301821DEE /* Pods_JetBeepExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetBeepExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				628B6D050DF41BFFD731C1AF /* Pods_JetBeepExample.framework in Frameworks */,
+				5B5938A9280B5ED0511C87B2 /* Pods_JetBeepExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +60,7 @@
 				34C350FB2225430F00C405D5 /* JetBeepExample */,
 				34C350FA2225430F00C405D5 /* Products */,
 				7DA2E471FB688CC5DC81ED35 /* Pods */,
-				B6C104D38194D46E5790EB18 /* Frameworks */,
+				E4BDCC9861488B301F750133 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,17 +95,16 @@
 		7DA2E471FB688CC5DC81ED35 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				937EA89927B928AFB0B6E08F /* Pods-JetBeepExample.debug.xcconfig */,
-				23BC0EE5498C7A27F3BA8C8C /* Pods-JetBeepExample.release.xcconfig */,
+				6232016C84C02865DA3D304A /* Pods-JetBeepExample.debug.xcconfig */,
+				7BD47E8FC798D3C4993EB746 /* Pods-JetBeepExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		B6C104D38194D46E5790EB18 /* Frameworks */ = {
+		E4BDCC9861488B301F750133 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				483D2DF3E6E2FA6E4E69DBFE /* Pods_JetBeepExample.framework */,
+				DCA02746B65256D301821DEE /* Pods_JetBeepExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,11 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34C3510B2225431000C405D5 /* Build configuration list for PBXNativeTarget "JetBeepExample" */;
 			buildPhases = (
-				58B34B11C384AC3EDBB18E25 /* [CP] Check Pods Manifest.lock */,
+				F64197B6932573E0DB328DEF /* [CP] Check Pods Manifest.lock */,
 				34C350F52225430F00C405D5 /* Sources */,
 				34C350F62225430F00C405D5 /* Frameworks */,
 				34C350F72225430F00C405D5 /* Resources */,
-				F28FFAC521FC6E085EB84669 /* [CP] Embed Pods Frameworks */,
+				72F92DD254F3D7392523A623 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,7 +178,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		58B34B11C384AC3EDBB18E25 /* [CP] Check Pods Manifest.lock */ = {
+		72F92DD254F3D7392523A623 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F64197B6932573E0DB328DEF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -199,23 +215,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F28FFAC521FC6E085EB84669 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -377,14 +376,14 @@
 		};
 		34C3510C2225431000C405D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 937EA89927B928AFB0B6E08F /* Pods-JetBeepExample.debug.xcconfig */;
+			baseConfigurationReference = 6232016C84C02865DA3D304A /* Pods-JetBeepExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2AUX883V6A;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JetBeepExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -398,14 +397,14 @@
 		};
 		34C3510D2225431000C405D5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23BC0EE5498C7A27F3BA8C8C /* Pods-JetBeepExample.release.xcconfig */;
+			baseConfigurationReference = 7BD47E8FC798D3C4993EB746 /* Pods-JetBeepExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2AUX883V6A;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JetBeepExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

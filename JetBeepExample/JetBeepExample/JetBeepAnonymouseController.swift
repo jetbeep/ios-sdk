@@ -27,7 +27,7 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
     private var locationsCallbackId = defaultEventSubscribeID
 
     func setup() {
-        JetBeep.shared.devServer = true
+        JetBeep.shared.serverType = .development
         JetBeep.shared.registrationType = .anonymous
         JetBeep.shared.setup(appName: "jetbeep-test-2", appTokenKey: "6538c072-bf9e-41f6-96fc-d6de16f46fa0")
         JetBeep.shared.serviceUUID = "0179e"
