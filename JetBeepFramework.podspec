@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|  
     s.name              = 'JetBeepFramework'
-    s.version           = '1.0.100'
+    s.version           = '1.0.101'
     s.summary           = 'JetBeep SDK.'
     s.homepage          = 'https://github.com/jetbeep/ios-sdk'
 
     s.author            = { "Oleh Hordiichuk" => "oleh.hordiichuk@jetbeep.com"  }
     s.license           = { :type => 'The MIT License (MIT)', :file => 'LICENSE' }
-	s.source            = { :http => "https://github.com/jetbeep/ios-sdk/raw/master/JetBeepFramework-1.0.100.zip"}
+	s.source            = { :http => "https://github.com/jetbeep/ios-sdk/raw/master/JetBeepFramework-1.0.101.zip"}
 	s.pod_target_xcconfig = {
 	    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
 	  }
@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
 	s.dependency 'Repeat'
 
 
-    s.ios.deployment_target = '11.0'
+    s.ios.deployment_target = '10.0'
     s.ios.vendored_frameworks = 'JetBeepFramework.xcframework'
 end  
