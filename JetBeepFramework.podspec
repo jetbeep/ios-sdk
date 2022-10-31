@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 	
 	s.dependency 'PromisesSwift'
 	s.dependency 'CryptoSwift'
-	s.dependency 'SQLite.swift', :branch => 'master'
+	s.dependency 'SQLite.swift',  :git => 'https://github.com/stephencelis/SQLite.swift.git', :branch => 'master'
 	s.dependency 'DeepDiff'
     s.dependency 'CocoaLumberjack/Swift'
 	s.dependency 'Repeat'
