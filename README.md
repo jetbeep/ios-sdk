@@ -11,6 +11,16 @@
 
 Add `pod 'JetBeepFramework'` at your `Podfile`
 
+```ruby
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+        end
+    end
+end
+```
+
 call in your terminal
 
 `pod install`
@@ -111,7 +121,7 @@ Add at `AppDelegate`
 `serviceUUID` - app serviceUUID generated on our backend side;
 
 ``` swift
-    JetBeep.shared.devServer = true
+    JetBeep.shared.serverType = .production
     JetBeep.shared.registrationType = .registered
     JetBeep.shared.setup(appName: appNameKey, appTokenKey: appToken)
     JetBeep.shared.serviceUUID = serviceUUID
