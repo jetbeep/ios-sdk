@@ -71,7 +71,7 @@ Add at `AppDelegate`
 `serviceUUID` - app serviceUUID generated on our backend side;
 
 ``` swift
-    JetBeep.shared.devServer = true
+    JetBeep.shared.serverType = .prod
     JetBeep.shared.registrationType = .anonymous
     JetBeep.shared.setup(appName: appNameKey, appTokenKey: appToken)
     JetBeep.shared.serviceUUID = serviceUUID
