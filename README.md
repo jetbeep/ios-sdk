@@ -11,6 +11,8 @@
 
 Add `pod 'JetBeepFramework'` at your `Podfile`
 
+At the end of pod file add:
+
 ```ruby
 post_install do |installer|
     installer.pods_project.targets.each do |target|
@@ -21,13 +23,13 @@ post_install do |installer|
 end
 ```
 
-call in your terminal
+Call at your command line:
 
 `pod install`
 
 `pod update`
 
-Open your project workspace.
+Open your project *workspace*.
 
 ### Project internal integration
 
