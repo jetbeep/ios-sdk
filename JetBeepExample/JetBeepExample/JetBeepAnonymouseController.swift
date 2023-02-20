@@ -33,7 +33,8 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
         JetBeep.shared.serviceUUID = "0179e"
         JetBeep.shared.barcodeRequestHandler = barcodeHandler
         barcodeHandler.delegate = self
-        JBAnalytics.shared.enabled = true
+        AnalyticsManager.shared.start()
+
         Log.isLoggingEnabled = true
 
         locationManager.delegate = self
@@ -53,6 +54,7 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
     func startMonitoring() {
         //You can select two types of flow bluetooth or via location
         Log.d("monitoring: \(JBLocations.shared.startMonitoringFlow(.bluetooth))")
+        
         do {
             try JBBeeper.shared.start()
         } catch {
