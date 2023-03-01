@@ -14,15 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var textView: UITextView?
     private var logStack: String = ""
 
-    let sdkType: JetBeepRegistrationType = .registered
-    lazy var controller: JetBeepControllerProtocol = {
-        switch sdkType {
-        case .anonymous:
-            return JetBeepAnonymouseController.shared
-        case .registered:
-            return JetBeepRegisteredController.shared
-        }
-    }()
+    var controller = JetBeepAnonymouseController.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,13 +39,12 @@ class ViewController: UIViewController {
         }
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         controller.setup()
         controller.startMonitoring()
         controller.subscribeOnLocationEvents()
-        controller.subscribeOnLoyality()
         controller.cacheData()
         NotificationController.shared.subscribeOnPushNotifications()
     }

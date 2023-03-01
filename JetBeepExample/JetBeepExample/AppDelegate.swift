@@ -15,9 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        window?.rootViewController = TabbarConfigurator().makeViewController()
         BackgroundController.shared.setup()
         TelemetryManager.shared.start()
-//        TelemetryController.shared.startMonitoring()
         Log.setupTransferLogsFlow(.shake)
         return true
     }

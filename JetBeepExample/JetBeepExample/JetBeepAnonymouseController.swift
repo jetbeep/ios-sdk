@@ -8,39 +8,49 @@
 
 import Foundation
 import JetBeepFramework
-import CoreLocation
-import CoreBluetooth
+import Combine
 
-final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
+final class JetBeepAnonymouseController: NSObject {
 
-    static var shared: JetBeepControllerProtocol {
-        get {
-            return JetBeepAnonymouseController()
-        }
-    }
+    static let shared = JetBeepAnonymouseController()
+    var subscriptions: Set<AnyCancellable> = []
+    
+    lazy var locationsManager: LocationsManager = {
+        return LocationsManager()
+    }()
 
     private override init() {}
     
     let barcodeHandler = JetBeepBarcodeHandler()
-    internal var peripheralManager: CBPeripheralManager!
-    let locationManager: CLLocationManager! = CLLocationManager()
-    private var locationsCallbackId = defaultEventSubscribeID
+
+//    func setup() {
+//        JetBeep.shared.serverType = .pro
+//        JetBeep.shared.registrationType = .anonymous
+//        JetBeep.shared.setup(appName: "jetbeep-test-2", appTokenKey: "6538c072-bf9e-41f6-96fc-d6de16f46fa0")
+//        JetBeep.shared.serviceUUID = "0179e"
+//        JetBeep.shared.barcodeRequestHandler = barcodeHandler
+//        barcodeHandler.delegate = self
+//        AnalyticsManager.shared.start()
+//
+//        Log.isLoggingEnabled = true
+//    }
 
     func setup() {
-        JetBeep.shared.serverType = .development
+       
+
+        JetBeep.shared.serverType = .production
         JetBeep.shared.registrationType = .anonymous
-        JetBeep.shared.setup(appName: "jetbeep-test-2", appTokenKey: "6538c072-bf9e-41f6-96fc-d6de16f46fa0")
-        JetBeep.shared.serviceUUID = "0179e"
-        JetBeep.shared.barcodeRequestHandler = barcodeHandler
-        barcodeHandler.delegate = self
-        AnalyticsManager.shared.start()
+        JetBeep.shared.setup(appName: appNameKey, appTokenKey: appToken)
+        JetBeep.shared.serviceUUID = serviceUUID
 
-        Log.isLoggingEnabled = true
+           JetBeep.shared.barcodeRequestHandler = barcodeHandler
+           barcodeHandler.delegate = self
+           AnalyticsManager.shared.start()
 
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
-    }
+           Log.isLoggingEnabled = true
+       }
+
+
 
     func cacheData() {
         JetBeep.shared.sync()
@@ -52,8 +62,10 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
     }
 
     func startMonitoring() {
-        //You can select two types of flow bluetooth or via location
-        Log.d("monitoring: \(JBLocations.shared.startMonitoringFlow(.bluetooth))")
+
+        locationsManager.start()
+        Log.d("monitoring started")
+
         
         do {
             try JBBeeper.shared.start()
@@ -64,37 +76,50 @@ final class JetBeepAnonymouseController: NSObject, JetBeepControllerProtocol {
 
     func subscribeOnLocationEvents() {
 
-        locationsCallbackId = JBLocations.shared.subscribe { event in
-            switch event {
-            case .merchantEntered(let merchant, let shop):
-                Log.d("Entered merchant: \(merchant.name) \(shop.name)")
-            case .shopEntered(let shop, _):
-                Log.d("Entered shop: \(shop.name)")
-            case .shopExited(let shop, _):
-                Log.d("Exited shop: \(shop.name)")
-            case .merchantExited(let merchant):
-                Log.d("Exited merchant: \(merchant.name)")
-            }
-        }
-    }
+        locationsManager
+            .devicesCallback.sink { signal in
+                switch signal.event {
+                case .found:
+                    Log.i("Device found \(signal.device)")
+                case .lost:
+                    Log.i("Device lost \(signal.device)")
+                @unknown default:
+                    fatalError("This API was changed, please review this code")
+                }
+            }.store(in: &subscriptions)
 
+        locationsManager
+            .merchantsCallback
+            .sink { signal in
+                switch signal.event {
+                case .entered:
+                    Log.i("Entered at merchant: \(signal.merchant.name)")
+                case .exited:
+                    Log.i("Exited from merchant: \(signal.merchant.name)")
+                @unknown default:
+                    fatalError("This API was changed, please review this code")
+                }
+            }.store(in: &subscriptions)
 
-    func subscribeOnLoyality() {
-        // we are not provide loyality cards for unregistered sdk's
+        locationsManager
+            .shopsCallback
+            .sink { signal in
+                switch signal.event {
+                case .entered:
+                    Log.i("Entered at shop: \(signal.shop.name)")
+                case .exited:
+                    Log.i("Exited form shop: \(signal.shop.name)")
+                @unknown default:
+                    fatalError("This API was changed, please review this code")
+                }
+            }.store(in: &subscriptions)
+
     }
     
     deinit {
-        JBLocations.shared.unsubscribe(locationsCallbackId)
+        locationsManager.stop()
     }
     
-}
-
-extension JetBeepAnonymouseController: CLLocationManagerDelegate {
-}
-
-extension JetBeepAnonymouseController: CBPeripheralManagerDelegate {
-    func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
-    }
 }
 
 extension JetBeepAnonymouseController: JBBarcodeTransferProtocol {

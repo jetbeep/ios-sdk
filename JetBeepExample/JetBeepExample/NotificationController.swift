@@ -31,27 +31,27 @@ final class NotificationController {
     }
 
     func execute() {
-        callbackID = NotificationDispatcher.shared.subscribe { event in
-               switch event {
-               case .ready(let model, let merchant, let shop):
-                   let logMessage = "Show notification for merchant \(model.merchantId)"
-                   Log.i(logMessage)
-                   
-                   all(model.merchant, model.info)
-                       .then{ result, info in
-                           guard let merchant = result else {
-                               Log.i("Didn't parse")
-                               return
-                           }
-                           Log.i("\(merchant) + \(info)")
-                           self.entered(merchant: merchant, info: info)
-                   }
-               case .cancel(let model):
-                   UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [model.id])
-                   let logMessage = "Exit from merchant \(model.merchantId) modelId\(model.id)"
-                   Log.i(logMessage)
-               }
-           }
+//        callbackID = NotificationDispatcher.shared.subscribe { event in
+//               switch event {
+//               case .ready(let model, let merchant, let shop):
+//                   let logMessage = "Show notification for merchant \(model.merchantId)"
+//                   Log.i(logMessage)
+//
+//                   all(model.merchant, model.info)
+//                       .then{ result, info in
+//                           guard let merchant = result else {
+//                               Log.i("Didn't parse")
+//                               return
+//                           }
+//                           Log.i("\(merchant) + \(info)")
+//                           self.entered(merchant: merchant, info: info)
+//                   }
+//               case .cancel(let model):
+//                   UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [model.id])
+//                   let logMessage = "Exit from merchant \(model.merchantId) modelId\(model.id)"
+//                   Log.i(logMessage)
+//               }
+//           }
        }
        
        private func exit(from notification: NotificationModel) {
@@ -64,6 +64,6 @@ final class NotificationController {
        }
        
     deinit {
-        NotificationDispatcher.shared.unsubscribe(callbackID)
+//        NotificationDispatcher.shared.unsubscribe(callbackID)
     }
 }
