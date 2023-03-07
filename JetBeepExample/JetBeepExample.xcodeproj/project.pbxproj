@@ -20,10 +20,12 @@
 		343B7F2729AE35BD000D6CE3 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343B7F2329AE35BD000D6CE3 /* LocationsView.swift */; };
 		343B7F2829AE35BD000D6CE3 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343B7F2429AE35BD000D6CE3 /* LocationsViewModel.swift */; };
 		343B7F2929AE35BD000D6CE3 /* LocationsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343B7F2529AE35BD000D6CE3 /* LocationsConfigurator.swift */; };
-		343B7F2E29AE6206000D6CE3 /* LockerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343B7F2A29AE6206000D6CE3 /* LockerRouter.swift */; };
-		343B7F2F29AE6206000D6CE3 /* LockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343B7F2B29AE6206000D6CE3 /* LockerView.swift */; };
-		343B7F3029AE6206000D6CE3 /* LockerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343B7F2C29AE6206000D6CE3 /* LockerViewModel.swift */; };
-		343B7F3129AE6206000D6CE3 /* LockerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343B7F2D29AE6206000D6CE3 /* LockerConfigurator.swift */; };
+		346DB6FE29B5FC48003829CE /* LockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB6FA29B5FC48003829CE /* LockerView.swift */; };
+		346DB6FF29B5FC48003829CE /* LockerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB6FB29B5FC48003829CE /* LockerRouter.swift */; };
+		346DB70029B5FC48003829CE /* LockerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB6FC29B5FC48003829CE /* LockerConfigurator.swift */; };
+		346DB70129B5FC48003829CE /* LockerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB6FD29B5FC48003829CE /* LockerViewModel.swift */; };
+		346DB70329B67A02003829CE /* NearbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB70229B67A02003829CE /* NearbyView.swift */; };
+		346DB70529B785A1003829CE /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB70429B785A1003829CE /* StatusView.swift */; };
 		34B07210222EA323007387D6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0720F222EA323007387D6 /* NotificationController.swift */; };
 		34B50EED225E33970000C397 /* BackgroundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B50EEC225E33960000C397 /* BackgroundController.swift */; };
 		34C350FD2225430F00C405D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C350FC2225430F00C405D5 /* AppDelegate.swift */; };
@@ -50,10 +52,12 @@
 		343B7F2329AE35BD000D6CE3 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		343B7F2429AE35BD000D6CE3 /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
 		343B7F2529AE35BD000D6CE3 /* LocationsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsConfigurator.swift; sourceTree = "<group>"; };
-		343B7F2A29AE6206000D6CE3 /* LockerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LockerRouter.swift; path = Locker/LockerRouter.swift; sourceTree = "<group>"; };
-		343B7F2B29AE6206000D6CE3 /* LockerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LockerView.swift; path = Locker/LockerView.swift; sourceTree = "<group>"; };
-		343B7F2C29AE6206000D6CE3 /* LockerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LockerViewModel.swift; path = Locker/LockerViewModel.swift; sourceTree = "<group>"; };
-		343B7F2D29AE6206000D6CE3 /* LockerConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LockerConfigurator.swift; path = Locker/LockerConfigurator.swift; sourceTree = "<group>"; };
+		346DB6FA29B5FC48003829CE /* LockerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerView.swift; sourceTree = "<group>"; };
+		346DB6FB29B5FC48003829CE /* LockerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerRouter.swift; sourceTree = "<group>"; };
+		346DB6FC29B5FC48003829CE /* LockerConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerConfigurator.swift; sourceTree = "<group>"; };
+		346DB6FD29B5FC48003829CE /* LockerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerViewModel.swift; sourceTree = "<group>"; };
+		346DB70229B67A02003829CE /* NearbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyView.swift; sourceTree = "<group>"; };
+		346DB70429B785A1003829CE /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		34B0720F222EA323007387D6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		34B50EEC225E33960000C397 /* BackgroundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundController.swift; sourceTree = "<group>"; };
 		34C350F92225430F00C405D5 /* JetBeepExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetBeepExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,13 +89,10 @@
 		343B7F0629AE196C000D6CE3 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				346DB6F929B5FC48003829CE /* Locker */,
 				343B7F2129AE3598000D6CE3 /* Locations */,
 				343B7F1829AE1E9E000D6CE3 /* Log */,
 				343B7F0729AE197F000D6CE3 /* Tabbar */,
-				343B7F2A29AE6206000D6CE3 /* LockerRouter.swift */,
-				343B7F2B29AE6206000D6CE3 /* LockerView.swift */,
-				343B7F2C29AE6206000D6CE3 /* LockerViewModel.swift */,
-				343B7F2D29AE6206000D6CE3 /* LockerConfigurator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -127,6 +128,27 @@
 				343B7F2529AE35BD000D6CE3 /* LocationsConfigurator.swift */,
 			);
 			path = Locations;
+			sourceTree = "<group>";
+		};
+		346DB6F929B5FC48003829CE /* Locker */ = {
+			isa = PBXGroup;
+			children = (
+				346DB70629B785A5003829CE /* Views */,
+				346DB6FA29B5FC48003829CE /* LockerView.swift */,
+				346DB6FB29B5FC48003829CE /* LockerRouter.swift */,
+				346DB6FC29B5FC48003829CE /* LockerConfigurator.swift */,
+				346DB6FD29B5FC48003829CE /* LockerViewModel.swift */,
+			);
+			path = Locker;
+			sourceTree = "<group>";
+		};
+		346DB70629B785A5003829CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				346DB70229B67A02003829CE /* NearbyView.swift */,
+				346DB70429B785A1003829CE /* StatusView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		34C350F02225430F00C405D5 = {
@@ -305,22 +327,24 @@
 				34C3510F22258F7900C405D5 /* JetBeepAnonymouseController.swift in Sources */,
 				34B50EED225E33970000C397 /* BackgroundController.swift in Sources */,
 				34C350FF2225430F00C405D5 /* ViewController.swift in Sources */,
+				346DB70329B67A02003829CE /* NearbyView.swift in Sources */,
 				34B07210222EA323007387D6 /* NotificationController.swift in Sources */,
 				343B7F1E29AE1EBC000D6CE3 /* LogView.swift in Sources */,
 				343B7F1429AE19FE000D6CE3 /* TabbarPresenter.swift in Sources */,
-				343B7F2E29AE6206000D6CE3 /* LockerRouter.swift in Sources */,
-				343B7F3129AE6206000D6CE3 /* LockerConfigurator.swift in Sources */,
+				346DB6FE29B5FC48003829CE /* LockerView.swift in Sources */,
 				34C350FD2225430F00C405D5 /* AppDelegate.swift in Sources */,
+				346DB70029B5FC48003829CE /* LockerConfigurator.swift in Sources */,
 				343B7F2729AE35BD000D6CE3 /* LocationsView.swift in Sources */,
 				343B7F2929AE35BD000D6CE3 /* LocationsConfigurator.swift in Sources */,
+				346DB6FF29B5FC48003829CE /* LockerRouter.swift in Sources */,
 				3430F9AB23605499000F5AF5 /* BaseNotification.swift in Sources */,
 				343B7F2829AE35BD000D6CE3 /* LocationsViewModel.swift in Sources */,
-				343B7F2F29AE6206000D6CE3 /* LockerView.swift in Sources */,
 				343B7F1629AE19FE000D6CE3 /* TabbarViewController.swift in Sources */,
 				343B7F2629AE35BD000D6CE3 /* LocationsRouter.swift in Sources */,
 				34C351132226C94700C405D5 /* JetBeepBarcodeHandler.swift in Sources */,
-				343B7F3029AE6206000D6CE3 /* LockerViewModel.swift in Sources */,
+				346DB70129B5FC48003829CE /* LockerViewModel.swift in Sources */,
 				343B7F2029AE1EBC000D6CE3 /* LogConfigurator.swift in Sources */,
+				346DB70529B785A1003829CE /* StatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
