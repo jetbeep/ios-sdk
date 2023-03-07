@@ -44,6 +44,13 @@ class TabbarPresenter {
 //        AnalyticsManager.shared.start()
 
         Log.isLoggingEnabled = true
+
+        //Start advertising
+        do {
+            try JBBeeper.shared.start()
+        } catch {
+            print(error)
+        }
     }
 
 
@@ -55,6 +62,7 @@ class TabbarPresenter {
             }.catch { e in
                 Log.w("unable to cache: \(e)")
         }
+
     }
 
 }
