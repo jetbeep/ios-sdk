@@ -130,6 +130,7 @@ struct LockerView: View {
     var searchButton: some View {
         return Button("Search") {
             viewModel.startSearch()
+            UIApplication.shared.endEditing()
         }
         .buttonStyle(ActionButtonStyle())
     }
@@ -137,6 +138,7 @@ struct LockerView: View {
     var applyButton: some View {
         return Button("Apply") {
             viewModel.applyToken()
+            UIApplication.shared.endEditing()
         }
         .buttonStyle(ActionButtonStyle())
         .disabled(!viewModel.isApplyButtonEnabled)
@@ -146,6 +148,7 @@ struct LockerView: View {
     var stopButton: some View {
         return Button("Stop") {
             viewModel.stopSearch()
+            UIApplication.shared.endEditing()
         }
         .buttonStyle(ActionButtonStyle())
     }
@@ -156,7 +159,7 @@ struct LockerView: View {
             Text("Nearby devices:")
                 .font(.title)
                 .padding(.top)
-            
+
             List(viewModel.deviceNearby, id: \.self) { device in
                 NearbyView(title: device.title,
                            subtitle: device.subtitle,
@@ -167,8 +170,6 @@ struct LockerView: View {
 
     }
 
-    
-    
     // MARK: - Actions
     
     // MARK: - Overrides

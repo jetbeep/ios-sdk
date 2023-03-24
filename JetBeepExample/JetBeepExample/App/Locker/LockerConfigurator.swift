@@ -33,7 +33,5 @@ extension LockerConfigurator: LockerConfiguratorProtocol {
         navigationController.tabBarItem.title = "Lockers"
         navigationController.tabBarItem.image = UIImage(systemName: "lock.fill")
         return (navigationController, viewModel)
-
-        return (viewController, viewModel)
     }
 }

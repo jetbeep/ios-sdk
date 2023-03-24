@@ -28,6 +28,11 @@
 		346DB70529B785A1003829CE /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB70429B785A1003829CE /* StatusView.swift */; };
 		34B07210222EA323007387D6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0720F222EA323007387D6 /* NotificationController.swift */; };
 		34B50EED225E33970000C397 /* BackgroundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B50EEC225E33960000C397 /* BackgroundController.swift */; };
+		34BEC99F29C20D7A00EFD565 /* LoyaltyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BEC99B29C20D7A00EFD565 /* LoyaltyRouter.swift */; };
+		34BEC9A029C20D7A00EFD565 /* LoyaltyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BEC99C29C20D7A00EFD565 /* LoyaltyView.swift */; };
+		34BEC9A129C20D7A00EFD565 /* LoyaltyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BEC99D29C20D7A00EFD565 /* LoyaltyViewModel.swift */; };
+		34BEC9A229C20D7A00EFD565 /* LoyaltyConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BEC99E29C20D7A00EFD565 /* LoyaltyConfigurator.swift */; };
+		34BEC9A429C22DE300EFD565 /* LoyaltyTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BEC9A329C22DE300EFD565 /* LoyaltyTransferView.swift */; };
 		34C350FD2225430F00C405D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C350FC2225430F00C405D5 /* AppDelegate.swift */; };
 		34C350FF2225430F00C405D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C350FE2225430F00C405D5 /* ViewController.swift */; };
 		34C351022225430F00C405D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C351002225430F00C405D5 /* Main.storyboard */; };
@@ -60,6 +65,11 @@
 		346DB70429B785A1003829CE /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		34B0720F222EA323007387D6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		34B50EEC225E33960000C397 /* BackgroundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundController.swift; sourceTree = "<group>"; };
+		34BEC99B29C20D7A00EFD565 /* LoyaltyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyRouter.swift; sourceTree = "<group>"; };
+		34BEC99C29C20D7A00EFD565 /* LoyaltyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyView.swift; sourceTree = "<group>"; };
+		34BEC99D29C20D7A00EFD565 /* LoyaltyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyViewModel.swift; sourceTree = "<group>"; };
+		34BEC99E29C20D7A00EFD565 /* LoyaltyConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyConfigurator.swift; sourceTree = "<group>"; };
+		34BEC9A329C22DE300EFD565 /* LoyaltyTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyTransferView.swift; sourceTree = "<group>"; };
 		34C350F92225430F00C405D5 /* JetBeepExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetBeepExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C350FC2225430F00C405D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34C350FE2225430F00C405D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +99,7 @@
 		343B7F0629AE196C000D6CE3 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				34BEC99A29C20D3800EFD565 /* Loaylty */,
 				346DB6F929B5FC48003829CE /* Locker */,
 				343B7F2129AE3598000D6CE3 /* Locations */,
 				343B7F1829AE1E9E000D6CE3 /* Log */,
@@ -149,6 +160,18 @@
 				346DB70429B785A1003829CE /* StatusView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		34BEC99A29C20D3800EFD565 /* Loaylty */ = {
+			isa = PBXGroup;
+			children = (
+				34BEC99B29C20D7A00EFD565 /* LoyaltyRouter.swift */,
+				34BEC99C29C20D7A00EFD565 /* LoyaltyView.swift */,
+				34BEC99D29C20D7A00EFD565 /* LoyaltyViewModel.swift */,
+				34BEC99E29C20D7A00EFD565 /* LoyaltyConfigurator.swift */,
+				34BEC9A329C22DE300EFD565 /* LoyaltyTransferView.swift */,
+			);
+			path = Loaylty;
 			sourceTree = "<group>";
 		};
 		34C350F02225430F00C405D5 = {
@@ -321,12 +344,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				343B7F1729AE19FE000D6CE3 /* TabbarConfigurator.swift in Sources */,
+				34BEC9A029C20D7A00EFD565 /* LoyaltyView.swift in Sources */,
 				343B7F1F29AE1EBC000D6CE3 /* LogViewModel.swift in Sources */,
 				343B7F1D29AE1EBC000D6CE3 /* LogRouter.swift in Sources */,
 				343B7F1529AE19FE000D6CE3 /* TabbarRouter.swift in Sources */,
 				34C3510F22258F7900C405D5 /* JetBeepAnonymouseController.swift in Sources */,
 				34B50EED225E33970000C397 /* BackgroundController.swift in Sources */,
 				34C350FF2225430F00C405D5 /* ViewController.swift in Sources */,
+				34BEC99F29C20D7A00EFD565 /* LoyaltyRouter.swift in Sources */,
 				346DB70329B67A02003829CE /* NearbyView.swift in Sources */,
 				34B07210222EA323007387D6 /* NotificationController.swift in Sources */,
 				343B7F1E29AE1EBC000D6CE3 /* LogView.swift in Sources */,
@@ -334,6 +359,7 @@
 				346DB6FE29B5FC48003829CE /* LockerView.swift in Sources */,
 				34C350FD2225430F00C405D5 /* AppDelegate.swift in Sources */,
 				346DB70029B5FC48003829CE /* LockerConfigurator.swift in Sources */,
+				34BEC9A429C22DE300EFD565 /* LoyaltyTransferView.swift in Sources */,
 				343B7F2729AE35BD000D6CE3 /* LocationsView.swift in Sources */,
 				343B7F2929AE35BD000D6CE3 /* LocationsConfigurator.swift in Sources */,
 				346DB6FF29B5FC48003829CE /* LockerRouter.swift in Sources */,
@@ -341,10 +367,12 @@
 				343B7F2829AE35BD000D6CE3 /* LocationsViewModel.swift in Sources */,
 				343B7F1629AE19FE000D6CE3 /* TabbarViewController.swift in Sources */,
 				343B7F2629AE35BD000D6CE3 /* LocationsRouter.swift in Sources */,
+				34BEC9A229C20D7A00EFD565 /* LoyaltyConfigurator.swift in Sources */,
 				34C351132226C94700C405D5 /* JetBeepBarcodeHandler.swift in Sources */,
 				346DB70129B5FC48003829CE /* LockerViewModel.swift in Sources */,
 				343B7F2029AE1EBC000D6CE3 /* LogConfigurator.swift in Sources */,
 				346DB70529B785A1003829CE /* StatusView.swift in Sources */,
+				34BEC9A129C20D7A00EFD565 /* LoyaltyViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
