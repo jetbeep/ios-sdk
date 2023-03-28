@@ -93,7 +93,6 @@ struct LockerView: View {
     // MARK: - View lifecycle
     
     var body: some View {
-
         VStack(spacing: 16) {
             tokenField
             tokenResult
@@ -102,10 +101,12 @@ struct LockerView: View {
             stopButton
             nearbyDevices
         }
-        .padding(.horizontal)
+        .padding(.top)
+        .padding(.horizontal, 0)
         .onTapGesture {
             UIApplication.shared.endEditing()
         }
+
     }
     
     // MARK: - Display logic
