@@ -27,6 +27,9 @@ class LoyaltyRouter {
 
 extension LoyaltyRouter: LoyaltyRouterProtocol {
     func openNextScreen() {
+        let addUserNumbersViewController = AddUserNumbersConfigurator().makeViewController().0
+        viewController?.navigationController?.pushViewController(addUserNumbersViewController, animated: true)
+
     }
 
 }
