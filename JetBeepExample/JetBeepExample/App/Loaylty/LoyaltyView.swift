@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import JetBeepFramework
 
 protocol LoyaltyViewProtocol {
 }
@@ -24,12 +25,31 @@ struct LoyaltyView: View {
     // MARK: - View lifecycle
     
     var body: some View {
-        ScrollView(.vertical) {
+        ScrollView(.vertical, showsIndicators: false) {
             LoyaltyTransferView(status: viewModel.status)
+                .padding(.top, 20)
+
+            VStack(alignment: .leading) {
+                Text("Offers")
+                    .font(.system(size: 32, weight: .bold, design: .default))
+                    .multilineTextAlignment(.leading)
+                    .padding(EdgeInsets(top: 20, leading: 0, bottom: 12, trailing: 20))
+
+                ForEach(viewModel.offers, id: \.self) { offer in
+                    OfferView(offer: offer)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+            }
         }
         .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+        .onAppear() {
+            viewModel.loadOffers()
+        }
+
+
     }
-    
+
+
     // MARK: - Display logic
     
     // MARK: - Actions
