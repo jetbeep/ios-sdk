@@ -63,6 +63,7 @@ struct LocationsView: View {
             Text(viewModel.enteredMerchant)
                 .modifier(SubtitleModifier())
         }
+        .padding(.top)
     }
 
     var exitedPart: some View {
