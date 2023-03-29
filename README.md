@@ -1,17 +1,17 @@
 
-# Jetbeep solution integration guideline
+# Jetbeep Solution Integration Guideline
 
 ## Hardware setup
 
 [Hardware setup documentation](https://drive.google.com/drive/u/1/folders/1exPvE0fJYBYEf-XRj5r4i4IQqMalLuma)
 
-## Steps for project setup
+## Project Setup Steps
 
-### pod integration
+### Pod integration
 
-Add `pod 'JetBeepFramework'` at your `Podfile`
+Add pod 'JetBeepFramework' to your Podfile.
 
-At the end of pod file add:
+At the end of the Podfile, add:
 
 ```ruby
 post_install do |installer|
@@ -23,7 +23,7 @@ post_install do |installer|
 end
 ```
 
-Call at your command line:
+Run the following commands:
 
 `pod install`
 
@@ -31,46 +31,38 @@ Call at your command line:
 
 Open your project *workspace*.
 
-### Project internal integration
+### Project Internal Integration
 
-Open project via Xcode
+Open the project using Xcode.
 
 ### Select tab: *Capabilities*
 
 Scroll to `Background Modes`:
 
-Open it and mark as `selected` next bars:
+Enable the following options:
 
-> - Location updates
-> - Uses Bluetooth LE accessories
-> - Acts as a Bluetooth LE accessory - switch `ON`
+- Location updates
+- Uses Bluetooth LE accessories
+- Acts as a Bluetooth LE accessory - switch ON
+- Open Info.plist file
+- Add Required background modes
+- As a description of this mode, you could use something like: `App shares data using CoreBluetooth ...`
 
-- Open `Info.plist` file
-- Add `Required background modes`
-- as a description of this mode, could be something like: `App shares data using CoreBluetooth ...`
+Add `import JetBeepFramework` to all files where you are using the SDK.
 
-Add `import JetBeepFramework` at all files where you are using our SDK.
+Do the same for the following keys:
 
-Do the same for the next keys:
-
-> - NSBluetoothPeripheralUsageDescription
-
-*The next 2 markers should add if you are using location flow for our beacon detection. Deprecated.*
-
-> - NSLocationAlwaysAndWhenInUseUsageDescription
-> - NSLocationWhenInUseUsageDescription
+- `NSBluetoothPeripheralUsageDescription`
 
 ## Code implementation
 
-### Anonymous registration flow
-
 Add at `AppDelegate`
 
-***Select dev server for tests!***
+***Select the dev server for tests!***
 
-`appName` - app name id generated on our backend side;
-`appToken` - app token id generated on our backend side;
-`serviceUUID` - app serviceUUID generated on our backend side;
+`appName` - App name ID generated on our backend side;
+`appToken` - App token ID generated on our backend side;
+`serviceUUID` - App serviceUUID generated on our backend side;
 
 ``` swift
     JetBeep.shared.serverType = .prod
@@ -79,93 +71,60 @@ Add at `AppDelegate`
     JetBeep.shared.serviceUUID = serviceUUID
 ```
 
-From our side, we are expecting an instance of barcode handler protocol.
+We expect an instance of the barcode handler protocol.
 
 `JetBeep.shared.barcodeRequestHandler = barcodeHandler`
 
-To observe the result of barcode transferring, you should apply a delegate implementation.
+To observe the result of barcode transferring, you should implement a delegate.
 
 `barcodeHandler.delegate = self`
 
-### Location flow implementation
+## Personalized Offers and Notifications
 
-Add location manager
+The Jetbeep SDK now supports personalized offers and notifications based on users' phone numbers or loyalty card numbers.
+
+### Assigning User Numbers
+
+To enable personalized offers and notifications, assign an array of strings containing phone numbers or loyalty card numbers to the `Jetbeep.shared.userNumbers` property:
 
 ```swift
-locationManager.delegate = self
-locationManager.requestAlwaysAuthorization()
+Jetbeep.shared.userNumbers = ["380007890000"]
 ```
 
-Add peripheral Manager
+### Usage
 
-`peripheralManager = CBPeripheralManager(delegate: self, queue: nil)`
+Once you have assigned user numbers to `Jetbeep.shared.userNumbers`, the SDK will automatically start providing personalized offers and notifications to the specified users at the next fetching request of `sync` function.
 
-Start `location flow`
+Please ensure that your application has obtained the necessary permissions from users to use their phone numbers or loyalty card numbers for this purpose.
 
-`JBLocations.shared.startMonitoringFlow(.location))`
+### Example
 
-### Bluetooth flow implementation
+Here's an example of how to set up personalized offers and notifications in your application:
+
+```swift
+// Obtain user's phone number or loyalty card number
+let userPhoneNumber = "380007890000"
+
+// Assign the number to Jetbeep.shared.userNumbers
+Jetbeep.shared.userNumbers = [userPhoneNumber]
+
+// Update offers and notifications
+JetBeep.shared.sync()
+```
+
+// The SDK will now provide personalized offers and notifications for the specified user
+
+### Bluetooth Flow implementation
 
 `JBLocations.shared.startMonitoringFlow(.bluetooth))`
 
-Working implementation you can find at our file:
+You can find a working implementation in our file:
 
 `JetBeepAnonymouseController.swift`
 
-### Registered registration flow
-
-Add at `AppDelegate`
-
-***Select dev server for tests!***
-
-`appName` - app name id generated on our backend side;
-`appToken` - app token id generated on our backend side;
-`serviceUUID` - app serviceUUID generated on our backend side;
-
-``` swift
-    JetBeep.shared.serverType = .production
-    JetBeep.shared.registrationType = .registered
-    JetBeep.shared.setup(appName: appNameKey, appTokenKey: appToken)
-    JetBeep.shared.serviceUUID = serviceUUID
-```
-
-- Don't forget to fetch data from the server-side with a set of shops, merchants, etc.
-
-### Location flow implementation (registered)
-
-Add location manager
-
-```swift
-locationManager.delegate = self
-locationManager.requestAlwaysAuthorization()
-```
-
-Add peripheral Manager
-
-`peripheralManager = CBPeripheralManager(delegate: self, queue: nil)`
-
-Start `location flow`
-
-`JBLocations.shared.startMonitoringFlow(.location))`
-
-### Bluetooth flow implementation (registered)
-
-`JBLocations.shared.startMonitoringFlow(.bluetooth))`
-
-Working implementation you can find at our file: `JetBeepRegisteredController.swift`
-
-```swift
-JetBeep.shared.sync()
-            .then {
-                //Add your code if needed
-            }.catch { _ in
-                //Add your code if needed
-        }
-```
-
 ### Mange events from device
 
-To receive events of entering and exit into the area of the jetbeep device, add a listener on it:
+To receive events of entering and exiting the area of the Jetbeep device, add a listener:
 
 ```swift
 locationsCallbackId = JBLocations.shared.subscribe { event in
@@ -184,14 +143,13 @@ locationsCallbackId = JBLocations.shared.subscribe { event in
 
 ### Notifications
 
-Jetbeep platform gives you a mechanism for setting custom user notifications on entering a custom shop or merchant and managing them.
-To receive push notifications, subscribe at `NotificationDispatcher`. Inside you can add logic for different types of notifications. The full realization of `NotificationController` sees in the test application.
+The Jetbeep platform provides a mechanism for setting custom user notifications on entering a specific shop or merchant and managing them. To receive push notifications, subscribe to `NotificationDispatcher`. Inside, you can add logic for different types of notifications. See the full implementation of `NotificationController` in the test application.
 
 ### Important
 
-All notifications are set up at the admin console and show according to rules there!
+All notifications are set up in the admin console and are shown according to the rules there!
 
-`NotificationModel` - contains next fields.
+`NotificationModel` contains the following fields.
 
 ```swift
     public let id: String - unique id
@@ -204,7 +162,7 @@ All notifications are set up at the admin console and show according to rules th
     public var info: Promise<NotificationInfo>
 ```
 
-`NotificationInfo` - contains all things that you needed, in general, to show notification for user
+`NotificationInfo` contains all the necessary information to show a notification to the user.
 
 ```swift
     public let id: String - auto generated
@@ -213,25 +171,6 @@ All notifications are set up at the admin console and show according to rules th
     public let iconPath: String? - an icon of merchant
     public let isSilentPush: Bool - setup on admin side 
 ```
-
-### Loyalty
-
-If you are using a registered type of app, you can subscribe for getting loyalties in a next way:
-
-```swift
-loyaltyCallbackId = JBBeeper.shared.subscribe { event in
-            switch event {
-            case .LoyaltyNotFound(_):
-                Log.w("loyalty not found")
-            case .LoyaltyTransferred(_, _, _, _):
-                Log.i("loyalty transferred")
-            default:
-                Log.w("unknown event")
-            }
-        }
-```
-
-e.g. at `JetBeepRegisteredController`
 
 ## Vending
 
