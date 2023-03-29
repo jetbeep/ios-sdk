@@ -30,18 +30,15 @@ class TabbarPresenter {
         self.view = view
     }
     func setup() {
-        let appNameKey = "gls-app"
-        let appToken = "4db96549-ea58-4cc1-bb5c-4ee9de416585"
-        let serviceUUID = "017a7"
+        let appNameKey = "jetbeep-demo-app"
+        let appToken = "50ef7956-f6d0-4524-a4db-7e33f51f0296"
+        let serviceUUID = "017af"
 
         JetBeep.shared.serverType = .production
         JetBeep.shared.registrationType = .anonymous
         JetBeep.shared.setup(appName: appNameKey, appTokenKey: appToken)
         JetBeep.shared.serviceUUID = serviceUUID
-
-//        JetBeep.shared.barcodeRequestHandler = barcodeHandler
-//        barcodeHandler.delegate = self
-//        AnalyticsManager.shared.start()
+        JetBeep.shared.userNumbers = Storage.userNumbers
 
         Log.isLoggingEnabled = true
 
@@ -72,6 +69,7 @@ extension TabbarPresenter: TabbarPresenterProtocol {
         return [
                 LocationsConfigurator().makeViewController().0,
                 LockerConfigurator().makeViewController().0,
+                LoyaltyConfigurator().makeViewController().0,
                 LogConfigurator().makeViewController().0]
     }
     
