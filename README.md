@@ -9,7 +9,7 @@
 
 ### Pod integration
 
-Add pod 'JetBeepFramework' to your Podfile.
+Add `pod 'JetBeepFramework'` to your Podfile.
 
 At the end of the Podfile, add:
 
@@ -174,19 +174,19 @@ All notifications are set up in the admin console and are shown according to the
 
 ## Vending
 
-We have separated detailed documentation with the step-by-step implementation of vending flow. Therefore, in this document, we provide only common classes and methods.
+We have separate, detailed documentation with a step-by-step implementation of the vending flow. Therefore, in this document, we provide only common classes and methods.
 
-First of all, you should start vending flow:
+First, start the vending flow:
+
 `VendingController.shared.start()`
 
-You can get instances of `VendingDevice` related to the custom merchant feeding merchant id to the filtering method:
+You can get instances of `VendingDevice` related to a specific merchant by feeding the merchant ID to the filtering method:
 
+`VendingController.shared.filteredDevices(by: merchant.id)`
 
-```VendingController.shared.filteredDevices(by: merchant.id)```
+As a result, you'll get a list of devices near you related to a specific merchant.
 
-As a result, you'll get a list of devices near you related to a custom merchant.
-
-### Listen devices status changes
+### Listen to Device Status Changes
 
 ```swift
 eventSubscribeID = VendingController.shared.subscribe(filter: merchant.id) { [weak self] event in
@@ -201,11 +201,11 @@ eventSubscribeID = VendingController.shared.subscribe(filter: merchant.id) { [we
         }
 ```
 
-### Connect & disconnect to a vending device
+### Connect & Disconnect to a Vending Device
 
-To connect at one of the founded and free devices, you can use the next method:
+To connect to one of the found and free devices, use the following method:
 
-`VendingController.shared.connectWithRetry(to: device)` - This method return promise, as a result, and notify is action was a success or not.
+`VendingController.shared.connectWithRetry(to: device)` - This method returns a promise that notifies whether the action was successful or not.
 
 `VendingDevice`
 
@@ -218,7 +218,7 @@ To connect at one of the founded and free devices, you can use the next method:
     public internal(set) var connectionState: VendingConnectionState
 ```
 
-`VendingConnectionState` have a next types:
+`VendingConnectionState` has the following types:
 
 ```swift
     case notConnected
@@ -226,15 +226,15 @@ To connect at one of the founded and free devices, you can use the next method:
     case connected
 ```
 
-Mobile can connect only to one vending device simultaneously. So that's why you don't specify id at disconnect method.
+A mobile device can connect to only one vending device at a time. That's why you don't specify an ID in the disconnect method.
 
-`VendingController.shared.disconnect()` -This method return promise, as a result, and notify is action was a success or not.
+`VendingController.shared.disconnect()` - This method returns a promise that notifies whether the action was successful or not.
 
-***Note: During active connection all other devices become non-connectable.***
+***Note: During an active connection, all other devices become non-connectable.***
 
-### Receiving events from devices
+### Receiving Events from Devices
 
-You need to receive events for interact with device after connection. In order to open a session and initiate payment, we need to receive events from the device. To do this, you need to subscribe to events:
+You need to receive events to interact with the device after connecting. To open a session and initiate payment, we need to receive events from the device. Subscribe to events as follows:
 
 ```swift
 eventSubscribeID = JBBeeper.shared.subscribe { event in
@@ -257,10 +257,10 @@ eventSubscribeID = JBBeeper.shared.subscribe { event in
            }
 ```
 
-When you want to finish flow, don't forget to unsubscribe and stop the beeper:
+When you want to finish the flow, don't forget to unsubscribe and stop the beeper:
 
 `JBBeeper.shared.unsubscribe(eventSubscribeID)`
 
 ### Testing
 
-***IMPORTANT NOTE***: Before testing ensure that your devices is configured for VENDING-type merchants. Please double-check them.
+***IMPORTANT NOTE:*** Before testing, ensure that your devices are configured for VENDING-type merchants. Please double-check them.
