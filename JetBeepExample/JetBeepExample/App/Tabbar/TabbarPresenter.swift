@@ -70,6 +70,7 @@ extension TabbarPresenter: TabbarPresenterProtocol {
                 LocationsConfigurator().makeViewController().0,
                 LockerConfigurator().makeViewController().0,
                 LoyaltyConfigurator().makeViewController().0,
+                VendingConfigurator().makeViewController().0,
                 LogConfigurator().makeViewController().0]
     }
     
