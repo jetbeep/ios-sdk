@@ -7,10 +7,77 @@
 //
 
 import SwiftUI
+import JetBeepFramework
+
+
+
+extension VendingManager.Status {
+
+    var isDisabled: Bool {
+        switch self {
+        case .unavailable, .disconnected, .lost:
+            return true
+        default:
+            return false
+        }
+    }
+
+
+}
+
+
+extension VendingManager.Status {
+    var title: String {
+        switch self {
+        case .found:
+            return "Found 🔍📍📡"
+        case .unavailable:
+            return "Unavailable ❌⚠️🚫"
+        case .connectable:
+            return "Connectable 🔄📶🔁"
+        case .connecting:
+            return "Connecting ⏳🔄⌛️"
+        case .connected:
+            return "Connected ✅🔗🌐"
+        case .disconnected:
+            return "Disconnected 🔌❌⛔️"
+        case .paymentInitiated:
+            return "Waiting for Payment 💸⌛️💳"
+        case .paymentSuccess:
+            return "Payment Success 💰✅🎉"
+        case .paymentFailure:
+            return "Payment Failure ❗️❌⚠️"
+        case .lost:
+            return "Lost 🔍❓🔎"
+        case .paymentCanceled:
+            return "Payment canceled 💸💳❌"
+        }
+    }
+
+    var buttonTitle: String {
+        switch self {
+        case .connectable:
+            return "Connect"
+        default:
+            return "Disconnect"
+        }
+    }
+
+    var buttonColor: Color {
+        switch self {
+        case .connectable:
+            return .green
+        default:
+            return .gray
+        }
+    }
+}
+
+
 
 struct VendingMachineView: View {
     let title: String
-    let status: VendingMachineStatus
+    let status: VendingManager.Status
     var completion: (() -> ())? = nil
 
     var body: some View {
@@ -18,7 +85,7 @@ struct VendingMachineView: View {
             VStack(alignment: .leading) {
                 Text(title)
                     .font(.headline)
-                Text(status.title.appending(status.icon))
+                Text(status.title)
             }
             Spacer()
             Button(action: {
@@ -38,90 +105,15 @@ struct VendingMachineView: View {
             RoundedRectangle(cornerRadius: 8)
                 .stroke(Color.gray, lineWidth: 1)
         )
-        .disabled(status == .unavailable)
+        .disabled(status.isDisabled)
 
     }
 
-    enum VendingMachineStatus {
-        case unavailable
-        case notConnected
-        case connecting
-        case connected
-        case disconnecting
-        case waitingForPayment
-        case paymentInProgress
-        case cooking
-        case done
-
-        var title: String {
-            switch self {
-            case .unavailable:
-                return "Unavailable"
-            case .notConnected:
-                return "Available for connection"
-            case .connected:
-                return "Select a drink"
-            case .waitingForPayment:
-                return "Waiting for payment..."
-            case .paymentInProgress:
-                return "Payment in progress..."
-            case .cooking:
-                return "Cooking..."
-            case .done:
-                return "Done!"
-            default:
-                return ""
-            }
-        }
-
-        var buttonTitle: String {
-            switch self {
-            case .notConnected, .unavailable:
-                return "Connect"
-            default:
-                return "Disconnect"
-            }
-        }
-
-        var buttonColor: Color {
-            switch self {
-            case .unavailable:
-                return Color.gray
-            default:
-                return Color.green
-            }
-        }
-
-
-        var icon: String {
-            switch self {
-            case .unavailable:
-                return "🚫❌🙅‍♀️"
-            case .notConnected:
-                return "🔌🚫❌"
-            case .connecting:
-                return "🔍🔄💬"
-            case .connected:
-                return "🔵✅🟢"
-            case .disconnecting:
-                return "🙅🏼‍♂️🔌👋🏼"
-            case .waitingForPayment:
-                return "⏳💸🤔"
-            case .paymentInProgress:
-                return "💳💰🕰️"
-            case .cooking:
-                return "🍳🍔🍟"
-            case .done:
-                return "🎉👍🏼✅"
-            }
-        }
-
-    }
 }
 
 
-struct VendingMachineView_Previews: PreviewProvider {
-    static var previews: some View {
-        VendingMachineView(title: "Custom vending machine", status:  .waitingForPayment)
-    }
-}
+//struct VendingMachineView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        VendingMachineView(title: "Custom vending machine", status: .unavailable(<#T##JetbeepDevice#>))
+//    }
+//}
