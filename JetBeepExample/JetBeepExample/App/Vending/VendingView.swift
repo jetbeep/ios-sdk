@@ -14,6 +14,7 @@ protocol VendingViewProtocol {
 struct VendingView: View {
     // MARK: - Public properties
     @ObservedObject private (set) var viewModel: VendingViewModel
+    @State var showModalView = false
 
     init (_ viewModel: VendingViewModel) {
         self.viewModel = viewModel
@@ -30,16 +31,51 @@ struct VendingView: View {
                 Text("Please get in at vending machine working area")
             }
         } else {
-            ScrollView {
-                ForEach(viewModel.vendingMachines, id: \.deviceId) { machine in
-                    let status = viewModel.status(for: machine)
-                    VendingMachineView(title: machine.shop.name, status: status) {
-                        print("Tap on machine \(machine) with \(status)")
-                        self.viewModel.connect(to: machine)
-                    }
+            ZStack {
+                scrollView
+                switch viewModel.paymentViewStatus {
+                case .notAvailable:
+                    EmptyView()
+                default:
+                    paymentView
                 }
-                .padding()
             }
+        }
+    }
+
+    var paymentView: some View {
+        ZStack {
+            BackgroundOverlay()
+                .onTapGesture {
+
+                    viewModel.paymentViewStatus = .notAvailable
+                    viewModel.paymentRequest = nil
+                    viewModel.disconnect()
+                }
+            
+            VStack {
+                Spacer()
+                if let paymentRequest = viewModel.paymentRequest {
+                    PaymentView(status: viewModel.paymentViewStatus, buttonTapped: viewModel.buttonTapped, paymentRequest: paymentRequest)
+                        .background(Color.white)
+                        .cornerRadius(16)
+                        .padding()
+                        .transition(.opacity)
+
+                }
+            }
+        }.animation(.easeInOut(duration: 0.33))
+    }
+
+    var scrollView: some View {
+        ScrollView {
+            ForEach(Array(viewModel.vendingMachines.keys), id: \.deviceId) { machine in
+                let status = viewModel.status(for: machine)
+                VendingMachineView(title: machine.shop.name, status: status) {
+                    viewModel.tap(on: machine)
+                }
+            }
+            .padding()
         }
     }
 }
