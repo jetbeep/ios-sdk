@@ -53,13 +53,13 @@ class LocationsViewModel: ObservableObject {
         locationsManager
             .shopsCallback
             .receive(on: RunLoop.main)
-            .sink { signal in
-                switch signal.event {
-                case .entered:
-                    self.enteredShop = signal.shop.name
+            .sink { event in
+                switch event {
+                case .entered(let shop):
+                    self.enteredShop = shop.name
                     self.exitedShop = ""
-                case .exited:
-                    self.exitedShop = signal.shop.name
+                case .exited(let shop):
+                    self.exitedShop = shop.name
                     self.enteredShop = ""
                 @unknown default:
                     fatalError("API was updated please make changes")
@@ -69,14 +69,14 @@ class LocationsViewModel: ObservableObject {
         locationsManager
             .merchantsCallback
             .receive(on: RunLoop.main)
-            .sink { signal in
-                switch signal.event {
-                case .entered:
-                    self.enteredMerchant = signal.merchant.name
+            .sink { event in
+                switch event {
+                case .entered(let merchant):
+                    self.enteredMerchant = merchant.name
                     self.exitedMerchant = ""
-                case .exited:
+                case .exited(let merchant):
                     self.enteredMerchant = ""
-                    self.exitedMerchant = signal.merchant.name
+                    self.exitedMerchant = merchant.name
                 @unknown default:
                     fatalError("API was updated please make changes")
                 }
