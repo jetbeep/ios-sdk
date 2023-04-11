@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3430F9AB23605499000F5AF5 /* BaseNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430F9AA23605499000F5AF5 /* BaseNotification.swift */; };
+		3432777829E40A600077F122 /* VendingPaymentProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3432777729E40A600077F122 /* VendingPaymentProcessor.swift */; };
+		3432777D29E40A670077F122 /* PaymentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3432777B29E40A670077F122 /* PaymentAPI.swift */; };
+		3432777F29E433240077F122 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3432777E29E433240077F122 /* API.swift */; };
 		34349E2D29D6F961005628F6 /* VendingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34349E2929D6F961005628F6 /* VendingRouter.swift */; };
 		34349E2E29D6F961005628F6 /* VendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34349E2A29D6F961005628F6 /* VendingView.swift */; };
 		34349E2F29D6F961005628F6 /* VendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34349E2B29D6F961005628F6 /* VendingViewModel.swift */; };
@@ -25,6 +28,9 @@
 		343B7F2729AE35BD000D6CE3 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343B7F2329AE35BD000D6CE3 /* LocationsView.swift */; };
 		343B7F2829AE35BD000D6CE3 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343B7F2429AE35BD000D6CE3 /* LocationsViewModel.swift */; };
 		343B7F2929AE35BD000D6CE3 /* LocationsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343B7F2529AE35BD000D6CE3 /* LocationsConfigurator.swift */; };
+		345F98BA29E44B7800BC6C79 /* PaymentRequest+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F98B929E44B7800BC6C79 /* PaymentRequest+extension.swift */; };
+		345F98BC29E451C000BC6C79 /* Dictionary+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F98BB29E451C000BC6C79 /* Dictionary+extension.swift */; };
+		345F98BE29E4539900BC6C79 /* Data+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F98BD29E4539900BC6C79 /* Data+extension.swift */; };
 		346DB6FE29B5FC48003829CE /* LockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB6FA29B5FC48003829CE /* LockerView.swift */; };
 		346DB6FF29B5FC48003829CE /* LockerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB6FB29B5FC48003829CE /* LockerRouter.swift */; };
 		346DB70029B5FC48003829CE /* LockerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB6FC29B5FC48003829CE /* LockerConfigurator.swift */; };
@@ -50,12 +56,16 @@
 		34C351022225430F00C405D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C351002225430F00C405D5 /* Main.storyboard */; };
 		34C351042225431000C405D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C351032225431000C405D5 /* Assets.xcassets */; };
 		34C351072225431000C405D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C351052225431000C405D5 /* LaunchScreen.storyboard */; };
+		34D91ADD29DDD1D1006143AA /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D91ADC29DDD1D1006143AA /* PaymentView.swift */; };
 		F205E9B99526B9EA7B67DA23 /* Pods_JetBeepExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EA5D171BDB7B7CD088BB8F /* Pods_JetBeepExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3151CBADFF2CC551E28CC881 /* Pods-JetBeepExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.release.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.release.xcconfig"; sourceTree = "<group>"; };
 		3430F9AA23605499000F5AF5 /* BaseNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNotification.swift; sourceTree = "<group>"; };
+		3432777729E40A600077F122 /* VendingPaymentProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendingPaymentProcessor.swift; sourceTree = "<group>"; };
+		3432777B29E40A670077F122 /* PaymentAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentAPI.swift; sourceTree = "<group>"; };
+		3432777E29E433240077F122 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		34349E2929D6F961005628F6 /* VendingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingRouter.swift; sourceTree = "<group>"; };
 		34349E2A29D6F961005628F6 /* VendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingView.swift; sourceTree = "<group>"; };
 		34349E2B29D6F961005628F6 /* VendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingViewModel.swift; sourceTree = "<group>"; };
@@ -73,6 +83,9 @@
 		343B7F2329AE35BD000D6CE3 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		343B7F2429AE35BD000D6CE3 /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
 		343B7F2529AE35BD000D6CE3 /* LocationsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsConfigurator.swift; sourceTree = "<group>"; };
+		345F98B929E44B7800BC6C79 /* PaymentRequest+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaymentRequest+extension.swift"; sourceTree = "<group>"; };
+		345F98BB29E451C000BC6C79 /* Dictionary+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+extension.swift"; sourceTree = "<group>"; };
+		345F98BD29E4539900BC6C79 /* Data+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+extension.swift"; sourceTree = "<group>"; };
 		346DB6FA29B5FC48003829CE /* LockerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerView.swift; sourceTree = "<group>"; };
 		346DB6FB29B5FC48003829CE /* LockerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerRouter.swift; sourceTree = "<group>"; };
 		346DB6FC29B5FC48003829CE /* LockerConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerConfigurator.swift; sourceTree = "<group>"; };
@@ -100,6 +113,7 @@
 		34C351032225431000C405D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34C351062225431000C405D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34C351082225431000C405D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34D91ADC29DDD1D1006143AA /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		56EA5D171BDB7B7CD088BB8F /* Pods_JetBeepExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetBeepExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F209B8A022203D710B769C /* Pods-JetBeepExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.debug.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,9 +130,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3432777929E40A670077F122 /* PaymentAPI */ = {
+			isa = PBXGroup;
+			children = (
+				3432777B29E40A670077F122 /* PaymentAPI.swift */,
+				3432777E29E433240077F122 /* API.swift */,
+			);
+			path = PaymentAPI;
+			sourceTree = "<group>";
+		};
 		34349E2829D6F936005628F6 /* Vending */ = {
 			isa = PBXGroup;
 			children = (
+				3432777929E40A670077F122 /* PaymentAPI */,
+				3432777729E40A600077F122 /* VendingPaymentProcessor.swift */,
 				34349E3129D6F96F005628F6 /* Views */,
 				34349E2929D6F961005628F6 /* VendingRouter.swift */,
 				34349E2A29D6F961005628F6 /* VendingView.swift */,
@@ -132,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				34349E3229D6F999005628F6 /* VendingMachineView.swift */,
+				34D91ADC29DDD1D1006143AA /* PaymentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +243,9 @@
 			isa = PBXGroup;
 			children = (
 				346EB8CF29D344AC00E04A87 /* Color+extension.swift */,
+				345F98B929E44B7800BC6C79 /* PaymentRequest+extension.swift */,
+				345F98BB29E451C000BC6C79 /* Dictionary+extension.swift */,
+				345F98BD29E4539900BC6C79 /* Data+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -432,6 +461,7 @@
 				343B7F1729AE19FE000D6CE3 /* TabbarConfigurator.swift in Sources */,
 				34BEC9A029C20D7A00EFD565 /* LoyaltyView.swift in Sources */,
 				343B7F1F29AE1EBC000D6CE3 /* LogViewModel.swift in Sources */,
+				3432777D29E40A670077F122 /* PaymentAPI.swift in Sources */,
 				346EB8DC29D358ED00E04A87 /* AddUserNumbersRouter.swift in Sources */,
 				343B7F1D29AE1EBC000D6CE3 /* LogRouter.swift in Sources */,
 				343B7F1529AE19FE000D6CE3 /* TabbarRouter.swift in Sources */,
@@ -443,6 +473,7 @@
 				34B07210222EA323007387D6 /* NotificationController.swift in Sources */,
 				343B7F1E29AE1EBC000D6CE3 /* LogView.swift in Sources */,
 				346EB8E229D3887900E04A87 /* AddUserNumberView.swift in Sources */,
+				345F98BC29E451C000BC6C79 /* Dictionary+extension.swift in Sources */,
 				343B7F1429AE19FE000D6CE3 /* TabbarPresenter.swift in Sources */,
 				346DB6FE29B5FC48003829CE /* LockerView.swift in Sources */,
 				346EB8DB29D358ED00E04A87 /* AddUserNumbersViewModel.swift in Sources */,
@@ -450,8 +481,11 @@
 				346DB70029B5FC48003829CE /* LockerConfigurator.swift in Sources */,
 				346EB8DD29D358ED00E04A87 /* AddUserNumbersView.swift in Sources */,
 				34BEC9A429C22DE300EFD565 /* LoyaltyTransferView.swift in Sources */,
+				3432777F29E433240077F122 /* API.swift in Sources */,
 				343B7F2729AE35BD000D6CE3 /* LocationsView.swift in Sources */,
+				345F98BA29E44B7800BC6C79 /* PaymentRequest+extension.swift in Sources */,
 				343B7F2929AE35BD000D6CE3 /* LocationsConfigurator.swift in Sources */,
+				345F98BE29E4539900BC6C79 /* Data+extension.swift in Sources */,
 				34349E2F29D6F961005628F6 /* VendingViewModel.swift in Sources */,
 				346DB6FF29B5FC48003829CE /* LockerRouter.swift in Sources */,
 				3430F9AB23605499000F5AF5 /* BaseNotification.swift in Sources */,
@@ -460,12 +494,14 @@
 				34349E3029D6F961005628F6 /* VendingConfigurator.swift in Sources */,
 				343B7F1629AE19FE000D6CE3 /* TabbarViewController.swift in Sources */,
 				346EB8D029D344AC00E04A87 /* Color+extension.swift in Sources */,
+				3432777829E40A600077F122 /* VendingPaymentProcessor.swift in Sources */,
 				343B7F2629AE35BD000D6CE3 /* LocationsRouter.swift in Sources */,
 				346EB8CD29D31A9D00E04A87 /* OfferView.swift in Sources */,
 				34BEC9A229C20D7A00EFD565 /* LoyaltyConfigurator.swift in Sources */,
 				346EB8DA29D358ED00E04A87 /* AddUserNumbersConfigurator.swift in Sources */,
 				346DB70129B5FC48003829CE /* LockerViewModel.swift in Sources */,
 				343B7F2029AE1EBC000D6CE3 /* LogConfigurator.swift in Sources */,
+				34D91ADD29DDD1D1006143AA /* PaymentView.swift in Sources */,
 				346DB70529B785A1003829CE /* StatusView.swift in Sources */,
 				34349E2D29D6F961005628F6 /* VendingRouter.swift in Sources */,
 				34BEC9A129C20D7A00EFD565 /* LoyaltyViewModel.swift in Sources */,
