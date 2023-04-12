@@ -34,7 +34,6 @@ struct BackgroundOverlay: View {
     }
 }
 
-
 struct PaymentView: View {
 
     enum PaymentStatus {
@@ -64,7 +63,6 @@ struct PaymentView: View {
                 .scaledToFit()
                 .clipShape(Circle())
                 .frame(width: 160, height: 160)
-
 
             Text("Price: \(Double(paymentRequest.amount) / 100, specifier: "%.2f")")
                 .font(.title)
@@ -96,9 +94,9 @@ struct PaymentView: View {
     }
 
     var paymentButton: some View {
-        Button(action: {
+        Button {
             buttonTapped.send(true)
-        }) {
+        } label: {
             if #available(iOS 14.0, *) {
                 HStack(alignment: .center) {
                     Image("jetbeep-logo")
@@ -124,19 +122,19 @@ struct PaymentView: View {
     }
 
     var successImage: some View {
-        Image(systemName:"checkmark.circle.fill")
+        Image(systemName: "checkmark.circle.fill")
             .resizable()
             .scaledToFit()
-            .frame(width: 50, height:50)
+            .frame(width: 50, height: 50)
             .foregroundColor(.green)
             .padding()
     }
 
     var failureImage: some View {
-        Image(systemName:"checkmark.circle.fill")
+        Image(systemName: "checkmark.circle.fill")
             .resizable()
             .scaledToFit()
-            .frame(width: 50, height:50)
+            .frame(width: 50, height: 50)
             .foregroundColor(.red)
 
     }
@@ -149,15 +147,11 @@ struct PaymentView: View {
             .padding()
     }
 
-
 }
-
-import SwiftUI
 
 struct PaymentContainerView: View {
     @State private var showModal = false
     var buttonTapped = PassthroughSubject<Bool, Never>()
-
 
     var body: some View {
         ZStack {
@@ -175,7 +169,7 @@ struct PaymentContainerView: View {
                 VStack {
                     Spacer()
                     PaymentView(buttonTapped: buttonTapped, paymentRequest: FakePayment()) //
-                        .frame(width:.infinity, height: 400)
+                        .frame(width: .infinity, height: 400)
                         .background(Color.white)
                         .cornerRadius(16)
                         .transition(.opacity)

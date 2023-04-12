@@ -10,14 +10,14 @@ import UIKit
 
 protocol LoyaltyRouterProtocol: AnyObject {
     var viewController: UIViewController? { get set }
-	
+
     func openNextScreen()
 }
 
 class LoyaltyRouter {
     // MARK: - Public variables
 	internal weak var viewController: UIViewController?
-    
+
     // MARK: - Initialization
     init(viewController: UIViewController) {
 		self.viewController = viewController

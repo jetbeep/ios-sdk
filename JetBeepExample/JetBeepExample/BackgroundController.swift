@@ -11,33 +11,31 @@ import UIKit
 import JetBeepFramework
 import Promises
 
-
 final class BackgroundController {
     private init() {}
     static let shared = BackgroundController()
-    
-    /**
+
+    /***
      Setup time of background fetch ones per 12 hours ==> 12h * 60m * 60s = 43200
      for testing you can set UIApplicationBackgroundFetchIntervalMinimum
-     */
+     ***/
 
-    //TODO: Rewrite it with 
     func setup() {
         UIApplication.shared.setMinimumBackgroundFetchInterval(43200)
     }
-    
+
     func fetchData(performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         Task {
-           let _ = try await TelemetryManager.shared.forceTelemetrySynchronization()
+           _ = try await TelemetryManager.shared.forceTelemetrySynchronization()
 
             all(JetBeep.shared.sync())
                 .then { _ in
                     Log.d("cached successfully")
                     completionHandler(.newData)
                 }
-                .catch { e in
+                .catch { error in
                     completionHandler(.failed)
-                    Log.w("unable to cache: \(e)")
+                    Log.w("unable to cache: \(error)")
                 }
         }
     }

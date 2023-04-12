@@ -24,13 +24,12 @@ class API {
     static let jetbeepDevPaymentPath = "https://dev.jetbeep.com/api/\(API.apiVersion)/payments"
     static let jetbeepProdPaymentPath = "https://prod.jetbeep.com/api/\(API.apiVersion)/payments"
 
-    //You need to add your Psp-api-key
+    // You need to add your Psp-api-key
     static var headers: [String: String] =
     ["Application-Auth": JetBeep.shared.appToken,
      "auth-token": JetBeep.shared.appKey,
      "Psp-api-key": "",
      "Content-Type": "application/json"]
-
 
     enum HTTPMethod: String {
         case get = "GET"
@@ -47,13 +46,12 @@ class API {
         return (data, response)
     }
 
-
     private func instantiateRequest(url: URL, method: HTTPMethod, headers: [String: String], body: Data? = nil) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.httpBody = body
         print("Headers: \(headers)")
-        print("Body: \(String(data: body ?? Data(), encoding: .utf8))")
+        print("Body: \(String(describing: String(data: body ?? Data(), encoding: .utf8)))")
 
         for (headerField, headerValue) in headers {
             request.setValue(headerValue, forHTTPHeaderField: headerField)
@@ -61,6 +59,5 @@ class API {
         print("Request: \(request)")
         return request
     }
-
 
 }

@@ -18,14 +18,13 @@ struct AddUserNumbersView: View {
     init (_ viewModel: AddUserNumbersViewModel) {
         self.viewModel = viewModel
     }
-    
+
     // MARK: - Private properties
     @State private var showAddNumberSheet: Bool = false
-    
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
-            if viewModel.userNumbers.count == 0 {
+            if viewModel.userNumbers.isEmpty {
                 VStack(alignment: .center, spacing: 20) {
                     Text("Please add any phone or loyalty card number to instantiate personalisation functionality.")
                         .multilineTextAlignment(.center)
@@ -59,9 +58,9 @@ struct AddUserNumbersView: View {
                     HStack {
                         Text(number)
                         Spacer()
-                        Button(action: {
+                        Button {
                             viewModel.remove(userNumber: number)
-                        }) {
+                        } label: {
                             Image(systemName: "minus.circle")
                         }
                     }
@@ -74,11 +73,10 @@ struct AddUserNumbersView: View {
         }
     }
 
-
     var addButton: some View {
-        Button(action: {
+        Button {
             showAddNumberSheet = true
-        }) {
+        } label: {
             Image(systemName: "plus.circle")
                 .resizable()
                 .frame(width: 30, height: 30)
@@ -89,10 +87,8 @@ struct AddUserNumbersView: View {
                 .padding(.trailing, 20)
                 .padding(.bottom, 20)
         }
+
     }
-
-
-
 
     // MARK: - Display logic
 
@@ -108,7 +104,6 @@ struct AddUserNumbersView_Previews: PreviewProvider {
         AddUserNumbersView(AddUserNumbersViewModel())
     }
 }
-
 
 extension AddUserNumbersView: AddUserNumbersViewProtocol {
 }

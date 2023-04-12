@@ -9,7 +9,6 @@
 import UIKit
 import SwiftUI
 
-
 protocol LocationsConfiguratorProtocol: AnyObject {
     func makeViewController() -> (UIViewController, LocationsViewModel)
 }
@@ -19,7 +18,7 @@ class LocationsConfigurator {
 
 extension LocationsConfigurator: LocationsConfiguratorProtocol {
     func makeViewController() -> (UIViewController, LocationsViewModel) {
-		
+
 		let viewModel = LocationsViewModel()
 		let view = LocationsView(viewModel)
         let viewController = UIHostingController(rootView: view)

@@ -10,14 +10,12 @@ import Foundation
 import JetBeepFramework
 import Promises
 
-
 class PaymentAPI {
     private let api: API
 
     init() throws {
         api = try API()
     }
-
 
     func paymentCreation(paymentRequest: PaymentRequest) async throws -> PaymentSignature {
 
@@ -37,14 +35,13 @@ class PaymentAPI {
         return try PaymentSignature(value: signature)
     }
 
-
     func paymentConfirmation(paymentRequest: PaymentRequest, signature: ConfirmationSignature) async throws {
 
-        let body = try ["signature" : signature.signature].toJSONData()
+        let body = try ["signature": signature.signature].toJSONData()
 
         Log.i("Payment confirmation")
 
-        let result = try await api.call(.patch, at: "/psp-main/\(paymentRequest.transactionId)",
+        _ = try await api.call(.patch, at: "/psp-main/\(paymentRequest.transactionId)",
                                         headers: API.headers, body: body)
 
     }

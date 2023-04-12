@@ -9,7 +9,6 @@
 import UIKit
 import SwiftUI
 
-
 protocol LoyaltyConfiguratorProtocol: AnyObject {
     func makeViewController() -> (UIViewController, LoyaltyViewModel)
 }
@@ -19,7 +18,7 @@ class LoyaltyConfigurator {
 
 extension LoyaltyConfigurator: LoyaltyConfiguratorProtocol {
     func makeViewController() -> (UIViewController, LoyaltyViewModel) {
-		
+
 		let viewModel = LoyaltyViewModel()
 		let view = LoyaltyView(viewModel)
         let viewController = UIHostingController(rootView: view)
@@ -42,7 +41,7 @@ extension LoyaltyConfigurator: LoyaltyConfiguratorProtocol {
 
     }
 
-    private func addUserNumberBarButton(with completion: @escaping () -> ()?) -> UIBarButtonItem {
+    private func addUserNumberBarButton(with completion: @escaping () -> Void?) -> UIBarButtonItem {
 
         let button = UIButton()
         let image = UIImage(systemName: "creditcard.fill")
@@ -61,7 +60,5 @@ extension LoyaltyConfigurator: LoyaltyConfiguratorProtocol {
 
         return UIBarButtonItem(customView: button)
     }
-
-
 
 }

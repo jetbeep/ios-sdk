@@ -9,7 +9,6 @@
 import UIKit
 import SwiftUI
 
-
 protocol AddUserNumbersConfiguratorProtocol: AnyObject {
     func makeViewController() -> (UIViewController, AddUserNumbersViewModel)
 }
@@ -19,7 +18,7 @@ class AddUserNumbersConfigurator {
 
 extension AddUserNumbersConfigurator: AddUserNumbersConfiguratorProtocol {
     func makeViewController() -> (UIViewController, AddUserNumbersViewModel) {
-		
+
 		let viewModel = AddUserNumbersViewModel()
 		let view = AddUserNumbersView(viewModel)
         let viewController = UIHostingController(rootView: view)

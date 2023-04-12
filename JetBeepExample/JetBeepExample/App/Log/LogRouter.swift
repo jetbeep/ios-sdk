@@ -10,14 +10,14 @@ import UIKit
 
 protocol LogRouterProtocol: AnyObject {
     var viewController: UIViewController? { get set }
-	
+
     func openNextScreen()
 }
 
 class LogRouter {
     // MARK: - Public variables
 	internal weak var viewController: UIViewController?
-    
+
     // MARK: - Initialization
     init(viewController: UIViewController) {
 		self.viewController = viewController

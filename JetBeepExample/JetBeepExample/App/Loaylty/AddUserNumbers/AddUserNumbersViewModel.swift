@@ -16,13 +16,11 @@ protocol AddUserNumbersViewModelProtocol: AnyObject {
 
 class AddUserNumbersViewModel: ObservableObject {
     // MARK: - Public variables
- 
 
     // MARK: - Private variables
     var router: AddUserNumbersRouterProtocol!
     @Published var userNumbers = Storage.userNumbers
-    
-    
+
     // MARK: - Initialization
 
     func remove(userNumber: String) {
@@ -30,7 +28,6 @@ class AddUserNumbersViewModel: ObservableObject {
         userNumbers = Storage.userNumbers
         syncWithDB()
     }
-
 
     func add(userNumber: String) {
         Storage.addNumber(userNumber)
@@ -50,7 +47,7 @@ extension AddUserNumbersViewModel: AddUserNumbersViewModelProtocol {
             }
             .catch { error in
                 print("Error sync: \(error)")
-            
+
             }
     }
 }

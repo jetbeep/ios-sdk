@@ -22,7 +22,7 @@ class TabbarPresenter {
 
     // MARK: - Private variables
     private let router: TabbarRouterProtocol
-    
+
     // MARK: - Initialization
     init(router: TabbarRouterProtocol, view: TabbarViewProtocol) {
 
@@ -42,7 +42,7 @@ class TabbarPresenter {
 
         Log.isLoggingEnabled = true
 
-        //Start advertising
+        // Start advertising
         do {
             try JBBeeper.shared.start()
         } catch {
@@ -50,14 +50,12 @@ class TabbarPresenter {
         }
     }
 
-
-
     func cacheData() {
         JetBeep.shared.sync()
             .then { _ in
                 Log.d("cached successfully")
-            }.catch { e in
-                Log.w("unable to cache: \(e)")
+            }.catch { error in
+                Log.w("unable to cache: \(error)")
         }
 
     }
@@ -73,5 +71,5 @@ extension TabbarPresenter: TabbarPresenterProtocol {
                 VendingConfigurator().makeViewController().0,
                 LogConfigurator().makeViewController().0]
     }
-    
+
 }

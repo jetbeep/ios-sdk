@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-
 struct LoyaltyTransferView: View {
     let status: LoyaltyViewModel.LoyaltyTransferStatus
     @State var shouldAnimate = false
@@ -18,7 +17,7 @@ struct LoyaltyTransferView: View {
             RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(Color.clear)
                 .shadow(radius: 10)
-                .background(LinearGradient(gradient: Gradient(colors: [Color(red: 119/255, green: 208/255, blue: 192/255), Color(red: 28/255, green: 66/255, blue: 139/255)]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                .background(linerGradient)
                 .aspectRatio(16/9, contentMode: .fit)
                 .frame(maxWidth: .infinity)
                 .cornerRadius(20)
@@ -40,6 +39,11 @@ struct LoyaltyTransferView: View {
         .onAppear {
             shouldAnimate = true
         }
+    }
+
+    var linerGradient: LinearGradient {
+        let gradient = Gradient(colors: [Color(red: 119/255, green: 208/255, blue: 192/255), Color(red: 28/255, green: 66/255, blue: 139/255)])
+        return LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing)
     }
 
     private var backgroundColor: Color {

@@ -14,7 +14,6 @@ extension UIApplication {
     }
 }
 
-
 struct ClearButton: ViewModifier {
     @Binding var text: String
 
@@ -47,7 +46,6 @@ private struct RoundedBorderTextFieldModifier: ViewModifier {
     }
 }
 
-
 private struct ActionButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         ZStack {
@@ -76,7 +74,6 @@ private struct TextModifier: ViewModifier {
     }
 }
 
-
 protocol LockerViewProtocol {
 }
 
@@ -87,11 +84,11 @@ struct LockerView: View {
     init (_ viewModel: LockerViewModel) {
         self.viewModel = viewModel
     }
-    
+
     // MARK: - Private properties
-    
+
     // MARK: - View lifecycle
-    
+
     var body: some View {
         VStack(spacing: 16) {
             tokenField
@@ -108,7 +105,7 @@ struct LockerView: View {
         }
 
     }
-    
+
     // MARK: - Display logic
     var tokenField: some View {
         return TextField("Please input token here:", text: $viewModel.tokenInput)
@@ -119,7 +116,6 @@ struct LockerView: View {
             .frame(height: 56)
 
     }
-
 
     var tokenResult: some View {
         return TextField("Token result:", text: $viewModel.tokenResult)
@@ -172,9 +168,9 @@ struct LockerView: View {
     }
 
     // MARK: - Actions
-    
+
     // MARK: - Overrides
-    
+
     // MARK: - Private functions
 }
 
@@ -183,7 +179,6 @@ struct LockerView_Previews: PreviewProvider {
         LockerView(LockerViewModel())
     }
 }
-
 
 extension LockerView: LockerViewProtocol {
 }

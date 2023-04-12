@@ -10,14 +10,14 @@ import UIKit
 
 protocol AddUserNumbersRouterProtocol: AnyObject {
     var viewController: UIViewController? { get set }
-	
+
     func openNextScreen()
 }
 
 class AddUserNumbersRouter {
     // MARK: - Public variables
 	internal weak var viewController: UIViewController?
-    
+
     // MARK: - Initialization
     init(viewController: UIViewController) {
 		self.viewController = viewController

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TabbarConfiguratorProtocol: class {
+protocol TabbarConfiguratorProtocol: AnyObject {
     func makeViewController() -> TabbarViewController
     func config(viewController: TabbarViewController)
 }

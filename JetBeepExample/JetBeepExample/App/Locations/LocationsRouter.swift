@@ -10,14 +10,14 @@ import UIKit
 
 protocol LocationsRouterProtocol: AnyObject {
     var viewController: UIViewController? { get set }
-	
+
     func openNextScreen()
 }
 
 class LocationsRouter {
     // MARK: - Public variables
 	internal weak var viewController: UIViewController?
-    
+
     // MARK: - Initialization
     init(viewController: UIViewController) {
 		self.viewController = viewController

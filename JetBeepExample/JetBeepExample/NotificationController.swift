@@ -15,19 +15,19 @@ final class NotificationController {
     static let shared = NotificationController()
     private init() {}
     private var callbackID = defaultEventSubscribeID
-    
+
     func subscribeOnPushNotifications() {
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) { granted, error in
+        center.requestAuthorization(options: [.alert, .sound]) { _, error in
             // Enable or disable features based on authorization.
-            if let e = error {
-                Log.i("Request push notification authorization failed! \(e)")
+            if let anError = error {
+                Log.i("Request push notification authorization failed! \(anError)")
             } else {
                 Log.i("Request push notification authorization succeed!")
             }
             self.execute()
         }
-        
+
     }
 
     func execute() {
@@ -53,16 +53,16 @@ final class NotificationController {
 //               }
 //           }
        }
-       
+
        private func exit(from notification: NotificationModel) {
            UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [notification.id])
        }
-       
+
        private func entered(merchant: Merchant, info: NotificationInfo) {
         let sound = info.isSilentPush ? nil : "default"
         BaseNotification(withIdentifier: info.id, withCategoryId: "Test", withTitle: info.title, withMessage: info.subtitle, withCustomSound: sound).show()
        }
-       
+
     deinit {
 //        NotificationDispatcher.shared.unsubscribe(callbackID)
     }

@@ -34,7 +34,10 @@ private struct FakeOffer: OfferViewProtocol {
 }
 
 extension LinearGradient {
-    static let personalised = LinearGradient(gradient: Gradient(colors: [UIColor.primaryColor.withAlphaComponent(0.3).toColor(), UIColor.secondaryColor.withAlphaComponent(0.5).toColor()]),
+    private static let firstColor = UIColor.primaryColor.withAlphaComponent(0.3).toColor()
+    private static let secondColor = UIColor.secondaryColor.withAlphaComponent(0.5).toColor()
+    
+    static let personalised = LinearGradient(gradient: Gradient(colors: [ firstColor, secondColor]),
                                              startPoint: .topLeading, endPoint: .bottomTrailing)
 
 }
@@ -63,10 +66,11 @@ struct OfferView: View {
         .cornerRadius(8)
     }
 
-
-
     private var thumbnailView: some View {
-        if let imageUrl = offer.thumbnailUrl, let url = URL(string: imageUrl) {
+        if let imageUrl = offer.thumbnailUrl,
+           let url = URL(string: imageUrl),
+           let data = try? Data(contentsOf: url),
+           let image = UIImage(data: data) {
             if #available(iOS 15.0, *) {
                 return AnyView(
                     AsyncImage(url: url) { image in
@@ -80,7 +84,7 @@ struct OfferView: View {
                 )
             } else {
                 return AnyView(
-                    Image(uiImage: UIImage(data: try! Data(contentsOf: url))!)
+                    Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 80, height: 80)
@@ -97,7 +101,6 @@ struct OfferView: View {
             )
         }
     }
-
 
     private var titleView: some View {
         Text(offer.title)
@@ -126,7 +129,6 @@ struct OfferView: View {
         }
     }
 }
-
 
 struct OfferView_Previews: PreviewProvider {
     static var previews: some View {

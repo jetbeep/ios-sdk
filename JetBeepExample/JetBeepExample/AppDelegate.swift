@@ -9,7 +9,6 @@
 import UIKit
 import JetBeepFramework
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -21,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-
     func application(_ application: UIApplication,
                      performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 
@@ -29,4 +27,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

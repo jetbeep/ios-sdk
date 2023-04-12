@@ -9,8 +9,6 @@
 import SwiftUI
 import JetBeepFramework
 
-
-
 extension VendingManager.Status {
 
     var isDisabled: Bool {
@@ -22,9 +20,7 @@ extension VendingManager.Status {
         }
     }
 
-
 }
-
 
 extension VendingManager.Status {
     var title: String {
@@ -73,12 +69,10 @@ extension VendingManager.Status {
     }
 }
 
-
-
 struct VendingMachineView: View {
     let title: String
     let status: VendingManager.Status
-    var completion: (() -> ())? = nil
+    var completion: (() -> Void)?
 
     var body: some View {
         HStack {
@@ -88,9 +82,9 @@ struct VendingMachineView: View {
                 Text(status.title)
             }
             Spacer()
-            Button(action: {
+            Button {
                 completion?()
-            }) {
+            } label: {
                 Text(status.buttonTitle)
                     .foregroundColor(.white)
             }
@@ -111,9 +105,8 @@ struct VendingMachineView: View {
 
 }
 
-
-//struct VendingMachineView_Previews: PreviewProvider {
+// struct VendingMachineView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        VendingMachineView(title: "Custom vending machine", status: .unavailable(<#T##JetbeepDevice#>))
 //    }
-//}
+// }

@@ -22,7 +22,7 @@ class LogViewModel: ObservableObject {
     @Published var text: String = ""
 
     init() {
-        
+
         Log.logCompletion = { [weak self] newText in
             guard let string = newText, let strongSelf = self else {
                 return
@@ -33,11 +33,11 @@ class LogViewModel: ObservableObject {
 
         }
     }
-    
+
     // MARK: - Initialization
 
 }
 
 extension LogViewModel: LogViewModelProtocol {
-   
+
 }

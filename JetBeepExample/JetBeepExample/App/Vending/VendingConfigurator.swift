@@ -9,7 +9,6 @@
 import UIKit
 import SwiftUI
 
-
 protocol VendingConfiguratorProtocol: AnyObject {
     func makeViewController() -> (UIViewController, VendingViewModel)
 }
@@ -19,7 +18,7 @@ class VendingConfigurator {
 
 extension VendingConfigurator: VendingConfiguratorProtocol {
     func makeViewController() -> (UIViewController, VendingViewModel) {
-		
+
 		let viewModel = VendingViewModel()
 		let view = VendingView(viewModel)
         let viewController = UIHostingController(rootView: view)

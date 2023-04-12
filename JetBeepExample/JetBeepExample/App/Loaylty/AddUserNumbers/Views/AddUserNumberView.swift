@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct AddUserNumberView : View {
+struct AddUserNumberView: View {
 
     @State var text: String = ""
 
@@ -36,7 +36,6 @@ struct AddUserNumberView : View {
         .foregroundColor(.white)
     }
 }
-
 
 struct AddUserNumberView_Previews: PreviewProvider {
     struct AddUserNumberViewWrapper: View {

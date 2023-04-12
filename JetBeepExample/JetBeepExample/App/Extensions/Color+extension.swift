@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 
-
 extension UIColor {
     convenience init(hex: Int) {
         self.init(
@@ -23,7 +22,6 @@ extension UIColor {
     func toColor() -> Color {
         return Color(self)
     }
-
 
 }
 

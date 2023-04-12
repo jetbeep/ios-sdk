@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TabbarRouterProtocol: class {
+protocol TabbarRouterProtocol: AnyObject {
     var view: TabbarViewController? { get set }
     func openNextScreen()
 }
@@ -16,7 +16,7 @@ protocol TabbarRouterProtocol: class {
 class TabbarRouter {
     // MARK: - Public variables
     internal weak var view: TabbarViewController?
-    
+
     // MARK: - Initialization
     init(view: TabbarViewController) {
         self.view = view

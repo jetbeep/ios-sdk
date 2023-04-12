@@ -17,7 +17,7 @@ extension LockerDevice: Hashable {
         hasher.combine(device.deviceId)
         hasher.combine(device.shopId)
     }
-    
+
     public static func == (lhs: JetBeepFramework.LockerDevice, rhs: JetBeepFramework.LockerDevice) -> Bool {
         return lhs.device.deviceId == rhs.device.deviceId
     }
@@ -36,7 +36,6 @@ extension LockerDevice: Hashable {
     }
 }
 
-
 protocol LockerViewModelProtocol: AnyObject {
     func startSearch()
     func stopSearch()
@@ -52,7 +51,6 @@ class LockerViewModel: ObservableObject {
 
     var inputTokenPublisher = PassthroughSubject<String, Never>()
 
-
     private var subscriptions: Set<AnyCancellable> = []
 
     var isApplyButtonEnabled: Bool {
@@ -63,7 +61,7 @@ class LockerViewModel: ObservableObject {
     var router: LockerRouterProtocol!
 
     // MARK: - Initialization
-    init()  {
+    init() {
         LockerManager.shared.start()
         LockerManager.shared
             .lockersStatusPublisher
@@ -82,7 +80,7 @@ class LockerViewModel: ObservableObject {
             .shared
             .devicesNearby
             .compactMap { device in
-                String("Device Id: \(device.device.deviceId) Shop name:\(device.device.shop.name) locker statuses \(device.device.lockers?.lockStatuses)")
+                String("Id: \(device.device.deviceId) name:\(device.device.shop.name) statuses \(device.device.lockers?.lockStatuses)")
             }
             .joined(separator: "\n")
 
@@ -148,6 +146,5 @@ extension LockerViewModel: LockerViewModelProtocol {
     func eraseTokenResultField() {
         tokenResult = ""
     }
-
 
 }

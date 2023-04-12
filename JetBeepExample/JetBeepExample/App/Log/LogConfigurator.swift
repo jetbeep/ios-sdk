@@ -9,7 +9,6 @@
 import UIKit
 import SwiftUI
 
-
 protocol LogConfiguratorProtocol: AnyObject {
     func makeViewController() -> (UIViewController, LogViewModel)
 }
@@ -19,10 +18,10 @@ class LogConfigurator {
 
 extension LogConfigurator: LogConfiguratorProtocol {
     func makeViewController() -> (UIViewController, LogViewModel) {
-		
+
 		let viewModel = LogViewModel()
 		let view = LogView(viewModel)
-        let viewController = UIHostingController(rootView: view)        
+        let viewController = UIHostingController(rootView: view)
 		let router = LogRouter(viewController: viewController)
 		viewModel.router = router
         let navigationController = UINavigationController(rootViewController: viewController)

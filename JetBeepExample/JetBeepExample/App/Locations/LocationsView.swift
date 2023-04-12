@@ -30,15 +30,15 @@ private struct SubtitleModifier: ViewModifier {
 struct LocationsView: View {
     // MARK: - Public properties
 	@ObservedObject private (set) var viewModel: LocationsViewModel
-	
+
     init (_ viewModel: LocationsViewModel) {
            self.viewModel = viewModel
        }
-    
+
     // MARK: - Private properties
-    
+
     // MARK: - View lifecycle
-    
+
     var body: some View {
         ScrollView(.vertical) {
             enteredPart
@@ -47,7 +47,6 @@ struct LocationsView: View {
         }
         .padding(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 16))
     }
-
 
     var enteredPart: some View {
         VStack {
@@ -97,13 +96,13 @@ struct LocationsView: View {
                 .modifier(SubtitleModifier())
         }
     }
-    
+
     // MARK: - Display logic
-    
+
     // MARK: - Actions
-    
+
     // MARK: - Overrides
-    
+
     // MARK: - Private functions
 }
 
@@ -112,7 +111,6 @@ struct LocationsView_Previews: PreviewProvider {
         LocationsView(LocationsViewModel())
     }
 }
-
 
 extension LocationsView: LocationsViewProtocol {
 }

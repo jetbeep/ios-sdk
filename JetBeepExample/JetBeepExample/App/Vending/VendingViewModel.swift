@@ -72,7 +72,7 @@ class VendingViewModel: ObservableObject {
             paymentViewStatus = .readyToPay
         case .paymentSuccess(let device, _):
             vendingMachines[device] = status
-        case .paymentCanceled(let device, let paymentRequest):
+        case .paymentCanceled(let device, _):
             paymentViewStatus = .notAvailable
             vendingMachines[device] = status
             disconnect()
@@ -120,13 +120,13 @@ class VendingViewModel: ObservableObject {
 
     func disconnect() {
         Task {
-            await try? VendingManager.shared.disconnect()
+            try? await VendingManager.shared.disconnect()
         }
     }
 
     func status(for device: JetbeepDevice) -> VendingManager.Status {
-        let _machine = vendingMachines.first { $0.key.deviceId == device.deviceId }
-        guard let _ = _machine,
+        let machine = vendingMachines.first { $0.key.deviceId == device.deviceId }
+        guard machine != nil,
               let status = vendingMachines[device]
         else {
             fatalError("Missing device!")
@@ -144,7 +144,6 @@ class VendingViewModel: ObservableObject {
         vendingMachines[device] = nil
     }
 
-
     func connect(to device: JetbeepDevice) {
         Task {
             do {
@@ -159,6 +158,5 @@ class VendingViewModel: ObservableObject {
         VendingManager.shared.stop()
         eventSubscriber?.cancel()
     }
-    
-}
 
+}

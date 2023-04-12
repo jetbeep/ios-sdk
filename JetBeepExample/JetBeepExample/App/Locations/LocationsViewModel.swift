@@ -82,11 +82,11 @@ class LocationsViewModel: ObservableObject {
                 }
             }.store(in: &subscriptions)
     }
-    
+
     // MARK: - Initialization
 
 }
 
 extension LocationsViewModel: LocationsViewModelProtocol {
-   
+
 }

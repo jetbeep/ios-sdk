@@ -19,14 +19,14 @@ struct VendingView: View {
     init (_ viewModel: VendingViewModel) {
         self.viewModel = viewModel
     }
-    
+
     // MARK: - Private properties
-    
+
     // MARK: - View lifecycle
-    
+
     var body: some View {
 
-        if viewModel.vendingMachines.count == 0 {
+        if viewModel.vendingMachines.isEmpty {
             VStack(alignment: .center) {
                 Text("Please get in at vending machine working area")
             }
@@ -52,7 +52,7 @@ struct VendingView: View {
                     viewModel.paymentRequest = nil
                     viewModel.disconnect()
                 }
-            
+
             VStack {
                 Spacer()
                 if let paymentRequest = viewModel.paymentRequest {
@@ -93,7 +93,6 @@ struct VendingView_Previews: PreviewProvider {
         VendingView(VendingViewModel())
     }
 }
-
 
 extension VendingView: VendingViewProtocol {
 }

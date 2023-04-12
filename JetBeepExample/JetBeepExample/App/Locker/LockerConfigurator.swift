@@ -9,7 +9,6 @@
 import UIKit
 import SwiftUI
 
-
 protocol LockerConfiguratorProtocol: AnyObject {
     func makeViewController() -> (UIViewController, LockerViewModel)
 }
@@ -19,7 +18,7 @@ class LockerConfigurator {
 
 extension LockerConfigurator: LockerConfiguratorProtocol {
     func makeViewController() -> (UIViewController, LockerViewModel) {
-		
+
 		let viewModel = LockerViewModel()
 		let view = LockerView(viewModel)
         let viewController = UIHostingController(rootView: view)

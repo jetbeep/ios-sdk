@@ -18,9 +18,8 @@ extension TimeInterval {
     }
 }
 
-
 extension Offer: OfferViewProtocol {
-    
+
     var subtitle: String {
         return description ?? ""
     }
@@ -50,29 +49,29 @@ extension Offer: Hashable {
 }
 
 protocol LoyaltyViewModelProtocol: AnyObject {
-    
+
 }
 
 class LoyaltyViewModel: ObservableObject {
     // MARK: - Public variables
-    
+
     enum LoyaltyTransferStatus {
         case success
         case failure
         case waiting
     }
-    
+
     // MARK: - Private variables
     @Published var status: LoyaltyTransferStatus = .waiting
     @Published var offers: [Offer] = []
-    
+
     private var subscriptions = Set<AnyCancellable>()
     var router: LoyaltyRouterProtocol!
-    
+
     init() {
         LoyaltyManager.shared.start()
-        
-        LoyaltyManager.shared.barcodeHandler = { shop, merchant in
+
+        LoyaltyManager.shared.barcodeHandler = { _, _ in
             if Storage.userNumbers.isEmpty {
                 return [
                     Barcode(withValue: "Please"),
@@ -85,7 +84,7 @@ class LoyaltyViewModel: ObservableObject {
                 .userNumbers
                 .map { Barcode(withValue: $0) }
         }
-        
+
         LoyaltyManager
             .shared
             .barcodeStatusTransferPublisher
@@ -101,7 +100,7 @@ class LoyaltyViewModel: ObservableObject {
                 }
                 self.dropToDefaultStatus()
             }.store(in: &subscriptions)
-    
+
     }
 
     func loadOffers() {
@@ -117,8 +116,6 @@ class LoyaltyViewModel: ObservableObject {
             }
         }
     }
-
-
 
     private func dropToDefaultStatus() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -136,13 +133,10 @@ class LoyaltyViewModel: ObservableObject {
         }
     }
 
-
-
-
     // MARK: - Initialization
-    
+
 }
 
 extension LoyaltyViewModel: LoyaltyViewModelProtocol {
-    
+
 }
