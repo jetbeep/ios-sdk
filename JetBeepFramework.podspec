@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
 	s.dependency 'Repeat'
 
 
-    s.ios.deployment_target = '11.0'
+    s.ios.deployment_target = '13.0'
     s.ios.vendored_frameworks = 'JetBeepFramework.xcframework'
 end  
