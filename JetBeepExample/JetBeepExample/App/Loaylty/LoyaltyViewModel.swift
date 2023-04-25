@@ -124,13 +124,7 @@ class LoyaltyViewModel: ObservableObject {
     }
 
     func fetchOffers() async throws -> [Offer] {
-        return try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<[Offer], Error>) in
-            JBRepository.shared.offers.fromCache().then { offers in
-                continuation.resume(returning: offers)
-            }.catch { error in
-                continuation.resume(throwing: error)
-            }
-        }
+        return try await JetbeepSDK.entities.offers.fromCache()
     }
 
     // MARK: - Initialization

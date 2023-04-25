@@ -51,11 +51,13 @@ class TabbarPresenter {
     }
 
     func cacheData() {
-        JetBeep.shared.sync()
-            .then { _ in
+        JetbeepTaskManager.shared.addAsyncTask {
+            do {
+                try await JetBeep.shared.sync()
                 Log.d("cached successfully")
-            }.catch { error in
+            } catch {
                 Log.w("unable to cache: \(error)")
+            }
         }
 
     }

@@ -17,11 +17,10 @@ Pod::Spec.new do |s|
 	s.dependency 'PromisesSwift'
 	s.dependency 'CryptoSwift'
 	s.dependency 'SQLite.swift', '< 0.14.0'
-	s.dependency 'DeepDiff'
     s.dependency 'CocoaLumberjack/Swift'
 	s.dependency 'Repeat'
 
 
-    s.ios.deployment_target = '13.0'
+    s.ios.deployment_target = '10.0'
     s.ios.vendored_frameworks = 'JetBeepFramework.xcframework'
 end  

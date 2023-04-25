@@ -62,15 +62,6 @@ class LockerViewModel: ObservableObject {
 
     // MARK: - Initialization
     init() {
-        LockerManager.shared.start()
-        LockerManager.shared
-            .lockersStatusPublisher
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] signal in
-                print("New status \(signal)")
-                self?.deviceNearby = LockerManager.shared.devicesNearby
-            }.store(in: &subscriptions)
-
     }
 
     private func deviceNearbyInfo() -> String {
@@ -131,6 +122,17 @@ extension LockerViewModel: LockerViewModelProtocol {
     }
 
     func startSearch() {
+
+        LockerManager.shared.start()
+        LockerManager.shared
+            .lockersStatusPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] signal in
+                print("New status \(signal)")
+                self?.deviceNearby = LockerManager.shared.devicesNearby
+            }.store(in: &subscriptions)
+
+        
         if let token = createTokenFromInputField() {
             LockerManager.shared.start(with: [token])
         } else {

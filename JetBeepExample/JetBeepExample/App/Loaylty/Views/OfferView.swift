@@ -109,10 +109,9 @@ struct OfferView: View {
 
     private var priceView: some View {
         HStack(spacing: 8) {
-            if let oldPrice = offer.oldPrice {
-                Text("\(oldPrice) $")
-                    .strikethrough()
-            }
+            Text("\(offer.oldPrice ) $")
+                .strikethrough()
+
             Text("\(offer.price) $")
                 .font(.headline)
                 .foregroundColor(.green)

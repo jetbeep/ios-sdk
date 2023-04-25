@@ -40,14 +40,13 @@ class AddUserNumbersViewModel: ObservableObject {
 extension AddUserNumbersViewModel: AddUserNumbersViewModelProtocol {
     func syncWithDB() {
 
-        JetBeep.shared
-            .sync()
-            .then { _ in
-                print("Success sync")
+        JetbeepTaskManager.shared.addAsyncTask {
+            do {
+                try await JetBeep.shared.sync()
+                Log.i("Success sync")
+            } catch {
+                Log.i("Error sync: \(error)")
             }
-            .catch { error in
-                print("Error sync: \(error)")
-
-            }
+        }
     }
 }

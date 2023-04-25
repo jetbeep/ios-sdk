@@ -26,17 +26,15 @@ final class BackgroundController {
 
     func fetchData(performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         Task {
-           _ = try await TelemetryManager.shared.forceTelemetrySynchronization()
-
-            all(JetBeep.shared.sync())
-                .then { _ in
-                    Log.d("cached successfully")
-                    completionHandler(.newData)
-                }
-                .catch { error in
-                    completionHandler(.failed)
-                    Log.w("unable to cache: \(error)")
-                }
+            do {
+                _ = try await TelemetryManager.shared.forceTelemetrySynchronization()
+                _ = try await JetBeep.shared.sync()
+                Log.d("cached successfully")
+                completionHandler(.newData)
+            } catch {
+                completionHandler(.failed)
+                Log.w("unable to cache: \(error)")
+            }
         }
     }
 }
