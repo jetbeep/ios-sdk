@@ -8,6 +8,23 @@
 
 import UIKit
 import JetBeepFramework
+import Combine
+
+private extension BluetoothPeripheralScanner.BluetoothStatus {
+    var description: String {
+        switch self {
+        case .permissionNotGranted:
+            return "Permission not granted: The app does not have the required permission to use Bluetooth."
+        case .bluetoothOff:
+            return "Bluetooth is off: Please turn on Bluetooth in your device settings."
+        case .bluetoothOn:
+            return "Bluetooth is on: The device's Bluetooth is enabled and ready for use."
+        case .bluetoothNotSupported:
+            return "Bluetooth not supported: This device does not support Bluetooth functionality."
+        }
+    }
+}
+
 
 protocol TabbarPresenterProtocol: AnyObject {
     var view: TabbarViewProtocol? { get set }
@@ -22,6 +39,7 @@ class TabbarPresenter {
 
     // MARK: - Private variables
     private let router: TabbarRouterProtocol
+    private var subscriptions: Set<AnyCancellable> = []
 
     // MARK: - Initialization
     init(router: TabbarRouterProtocol, view: TabbarViewProtocol) {
@@ -48,6 +66,9 @@ class TabbarPresenter {
         } catch {
             print(error)
         }
+
+        subscribeForBluetoothStatus()
+
     }
 
     func cacheData() {
@@ -60,6 +81,17 @@ class TabbarPresenter {
             }
         }
 
+    }
+
+    private func subscribeForBluetoothStatus() {
+        LocationsManager().bluetoothStatusPublisher
+            .dropFirst()
+            .receive(on: DispatchQueue.main)
+            .sink { status in
+            if status != .bluetoothOn {
+                self.view?.showToast(message: status.description)
+            }
+        }.store(in: &subscriptions)
     }
 
 }

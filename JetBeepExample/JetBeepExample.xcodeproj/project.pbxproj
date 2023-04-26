@@ -31,6 +31,8 @@
 		345F98BA29E44B7800BC6C79 /* PaymentRequest+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F98B929E44B7800BC6C79 /* PaymentRequest+extension.swift */; };
 		345F98BC29E451C000BC6C79 /* Dictionary+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F98BB29E451C000BC6C79 /* Dictionary+extension.swift */; };
 		345F98BE29E4539900BC6C79 /* Data+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F98BD29E4539900BC6C79 /* Data+extension.swift */; };
+		3468891029F9888200A2C1D0 /* ErrorToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3468890F29F9888200A2C1D0 /* ErrorToastView.swift */; };
+		3468891229F988AE00A2C1D0 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3468891129F988AE00A2C1D0 /* UIViewController+extension.swift */; };
 		346DB6FE29B5FC48003829CE /* LockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB6FA29B5FC48003829CE /* LockerView.swift */; };
 		346DB6FF29B5FC48003829CE /* LockerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB6FB29B5FC48003829CE /* LockerRouter.swift */; };
 		346DB70029B5FC48003829CE /* LockerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB6FC29B5FC48003829CE /* LockerConfigurator.swift */; };
@@ -85,6 +87,8 @@
 		345F98B929E44B7800BC6C79 /* PaymentRequest+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaymentRequest+extension.swift"; sourceTree = "<group>"; };
 		345F98BB29E451C000BC6C79 /* Dictionary+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+extension.swift"; sourceTree = "<group>"; };
 		345F98BD29E4539900BC6C79 /* Data+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+extension.swift"; sourceTree = "<group>"; };
+		3468890F29F9888200A2C1D0 /* ErrorToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ErrorToastView.swift; path = Views/ErrorToastView.swift; sourceTree = "<group>"; };
+		3468891129F988AE00A2C1D0 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		346DB6FA29B5FC48003829CE /* LockerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerView.swift; sourceTree = "<group>"; };
 		346DB6FB29B5FC48003829CE /* LockerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerRouter.swift; sourceTree = "<group>"; };
 		346DB6FC29B5FC48003829CE /* LockerConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerConfigurator.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				343B7F2129AE3598000D6CE3 /* Locations */,
 				343B7F1829AE1E9E000D6CE3 /* Log */,
 				343B7F0729AE197F000D6CE3 /* Tabbar */,
+				3468890F29F9888200A2C1D0 /* ErrorToastView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				345F98B929E44B7800BC6C79 /* PaymentRequest+extension.swift */,
 				345F98BB29E451C000BC6C79 /* Dictionary+extension.swift */,
 				345F98BD29E4539900BC6C79 /* Data+extension.swift */,
+				3468891129F988AE00A2C1D0 /* UIViewController+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -491,6 +497,7 @@
 				34B07210222EA323007387D6 /* NotificationController.swift in Sources */,
 				343B7F1E29AE1EBC000D6CE3 /* LogView.swift in Sources */,
 				346EB8E229D3887900E04A87 /* AddUserNumberView.swift in Sources */,
+				3468891029F9888200A2C1D0 /* ErrorToastView.swift in Sources */,
 				345F98BC29E451C000BC6C79 /* Dictionary+extension.swift in Sources */,
 				343B7F1429AE19FE000D6CE3 /* TabbarPresenter.swift in Sources */,
 				346DB6FE29B5FC48003829CE /* LockerView.swift in Sources */,
@@ -505,6 +512,7 @@
 				343B7F2929AE35BD000D6CE3 /* LocationsConfigurator.swift in Sources */,
 				345F98BE29E4539900BC6C79 /* Data+extension.swift in Sources */,
 				34349E2F29D6F961005628F6 /* VendingViewModel.swift in Sources */,
+				3468891229F988AE00A2C1D0 /* UIViewController+extension.swift in Sources */,
 				346DB6FF29B5FC48003829CE /* LockerRouter.swift in Sources */,
 				3430F9AB23605499000F5AF5 /* BaseNotification.swift in Sources */,
 				343B7F2829AE35BD000D6CE3 /* LocationsViewModel.swift in Sources */,

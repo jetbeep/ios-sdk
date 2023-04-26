@@ -9,6 +9,7 @@
 import UIKit
 
 protocol TabbarViewProtocol: AnyObject {
+    func showToast(message: String)
 }
 
 class TabbarViewController: UITabBarController {
@@ -47,4 +48,7 @@ extension TabbarViewController: UITabBarControllerDelegate {
 }
 
 extension TabbarViewController: TabbarViewProtocol {
+    func showToast(message: String) {
+        showErrorToast(message: message)
+    }
 }
