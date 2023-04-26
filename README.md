@@ -22,6 +22,13 @@ post_install do |installer|
     end
 end
 ```
+Hotfix for Xcode 14.3
+Xcode 14.3 introduced breaking changes. To resolve these issues, follow the temporary solution provided in this [Stack Overflow](https://stackoverflow.com/a/75924853/1810564) post. When unzipping the missing files, ensure they are placed in the correct folder, and move them from the subfolder to the 'arc' folder.
+
+Hot fix for Xcode 14.3:
+New version bring a breaking changes to resolve it you can use next temporary solution:
+
+It's important to check a folder where you will unzip missing files. Files should be moved from subfolder to arc folder.
 
 Run the following commands:
 
