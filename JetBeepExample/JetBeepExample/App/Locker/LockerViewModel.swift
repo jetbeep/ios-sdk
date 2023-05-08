@@ -132,7 +132,6 @@ extension LockerViewModel: LockerViewModelProtocol {
                 self?.deviceNearby = LockerManager.shared.devicesNearby
             }.store(in: &subscriptions)
 
-        
         if let token = createTokenFromInputField() {
             LockerManager.shared.start(with: [token])
         } else {

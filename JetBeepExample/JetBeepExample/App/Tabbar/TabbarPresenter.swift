@@ -25,7 +25,6 @@ private extension BluetoothPeripheralScanner.BluetoothStatus {
     }
 }
 
-
 protocol TabbarPresenterProtocol: AnyObject {
     var view: TabbarViewProtocol? { get set }
     func instantiateViewControllers() -> [UIViewController]
