@@ -33,6 +33,7 @@
 		345F98BE29E4539900BC6C79 /* Data+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F98BD29E4539900BC6C79 /* Data+extension.swift */; };
 		3468891029F9888200A2C1D0 /* ErrorToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3468890F29F9888200A2C1D0 /* ErrorToastView.swift */; };
 		3468891229F988AE00A2C1D0 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3468891129F988AE00A2C1D0 /* UIViewController+extension.swift */; };
+		3468891429F9932600A2C1D0 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3468891329F9932600A2C1D0 /* NotificationsController.swift */; };
 		346DB6FE29B5FC48003829CE /* LockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB6FA29B5FC48003829CE /* LockerView.swift */; };
 		346DB6FF29B5FC48003829CE /* LockerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB6FB29B5FC48003829CE /* LockerRouter.swift */; };
 		346DB70029B5FC48003829CE /* LockerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346DB6FC29B5FC48003829CE /* LockerConfigurator.swift */; };
@@ -47,7 +48,7 @@
 		346EB8DD29D358ED00E04A87 /* AddUserNumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346EB8D929D358ED00E04A87 /* AddUserNumbersView.swift */; };
 		346EB8E029D37B4300E04A87 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346EB8DF29D37B4300E04A87 /* Storage.swift */; };
 		346EB8E229D3887900E04A87 /* AddUserNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346EB8E129D3887900E04A87 /* AddUserNumberView.swift */; };
-		34B07210222EA323007387D6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0720F222EA323007387D6 /* NotificationController.swift */; };
+		3480AA4F29FFF9CD00B70BEB /* LoyaltyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3480AA4E29FFF9CD00B70BEB /* LoyaltyController.swift */; };
 		34B50EED225E33970000C397 /* BackgroundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B50EEC225E33960000C397 /* BackgroundController.swift */; };
 		34BEC99F29C20D7A00EFD565 /* LoyaltyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BEC99B29C20D7A00EFD565 /* LoyaltyRouter.swift */; };
 		34BEC9A029C20D7A00EFD565 /* LoyaltyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BEC99C29C20D7A00EFD565 /* LoyaltyView.swift */; };
@@ -89,6 +90,7 @@
 		345F98BD29E4539900BC6C79 /* Data+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+extension.swift"; sourceTree = "<group>"; };
 		3468890F29F9888200A2C1D0 /* ErrorToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ErrorToastView.swift; path = Views/ErrorToastView.swift; sourceTree = "<group>"; };
 		3468891129F988AE00A2C1D0 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
+		3468891329F9932600A2C1D0 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		346DB6FA29B5FC48003829CE /* LockerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerView.swift; sourceTree = "<group>"; };
 		346DB6FB29B5FC48003829CE /* LockerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerRouter.swift; sourceTree = "<group>"; };
 		346DB6FC29B5FC48003829CE /* LockerConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockerConfigurator.swift; sourceTree = "<group>"; };
@@ -103,7 +105,7 @@
 		346EB8D929D358ED00E04A87 /* AddUserNumbersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserNumbersView.swift; sourceTree = "<group>"; };
 		346EB8DF29D37B4300E04A87 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		346EB8E129D3887900E04A87 /* AddUserNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserNumberView.swift; sourceTree = "<group>"; };
-		34B0720F222EA323007387D6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		3480AA4E29FFF9CD00B70BEB /* LoyaltyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyController.swift; sourceTree = "<group>"; };
 		34B50EEC225E33960000C397 /* BackgroundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundController.swift; sourceTree = "<group>"; };
 		34BEC99B29C20D7A00EFD565 /* LoyaltyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyRouter.swift; sourceTree = "<group>"; };
 		34BEC99C29C20D7A00EFD565 /* LoyaltyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		343B7F0629AE196C000D6CE3 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				3480AA4D29FFF9A200B70BEB /* BackgroundControllers */,
 				346EB8DE29D37B2100E04A87 /* Utils */,
 				346EB8CE29D3448600E04A87 /* Extensions */,
 				34349E2829D6F936005628F6 /* Vending */,
@@ -284,6 +287,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3480AA4D29FFF9A200B70BEB /* BackgroundControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3468891329F9932600A2C1D0 /* NotificationsController.swift */,
+				3480AA4E29FFF9CD00B70BEB /* LoyaltyController.swift */,
+			);
+			path = BackgroundControllers;
+			sourceTree = "<group>";
+		};
 		34BEC99A29C20D3800EFD565 /* Loaylty */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,7 +339,6 @@
 				34C351032225431000C405D5 /* Assets.xcassets */,
 				34C351052225431000C405D5 /* LaunchScreen.storyboard */,
 				34C351082225431000C405D5 /* Info.plist */,
-				34B0720F222EA323007387D6 /* NotificationController.swift */,
 			);
 			path = JetBeepExample;
 			sourceTree = "<group>";
@@ -484,6 +495,7 @@
 			files = (
 				343B7F1729AE19FE000D6CE3 /* TabbarConfigurator.swift in Sources */,
 				34BEC9A029C20D7A00EFD565 /* LoyaltyView.swift in Sources */,
+				3468891429F9932600A2C1D0 /* NotificationsController.swift in Sources */,
 				343B7F1F29AE1EBC000D6CE3 /* LogViewModel.swift in Sources */,
 				3432777D29E40A670077F122 /* PaymentAPI.swift in Sources */,
 				346EB8DC29D358ED00E04A87 /* AddUserNumbersRouter.swift in Sources */,
@@ -494,7 +506,6 @@
 				34B50EED225E33970000C397 /* BackgroundController.swift in Sources */,
 				34BEC99F29C20D7A00EFD565 /* LoyaltyRouter.swift in Sources */,
 				346DB70329B67A02003829CE /* NearbyView.swift in Sources */,
-				34B07210222EA323007387D6 /* NotificationController.swift in Sources */,
 				343B7F1E29AE1EBC000D6CE3 /* LogView.swift in Sources */,
 				346EB8E229D3887900E04A87 /* AddUserNumberView.swift in Sources */,
 				3468891029F9888200A2C1D0 /* ErrorToastView.swift in Sources */,
@@ -512,6 +523,7 @@
 				343B7F2929AE35BD000D6CE3 /* LocationsConfigurator.swift in Sources */,
 				345F98BE29E4539900BC6C79 /* Data+extension.swift in Sources */,
 				34349E2F29D6F961005628F6 /* VendingViewModel.swift in Sources */,
+				3480AA4F29FFF9CD00B70BEB /* LoyaltyController.swift in Sources */,
 				3468891229F988AE00A2C1D0 /* UIViewController+extension.swift in Sources */,
 				346DB6FF29B5FC48003829CE /* LockerRouter.swift in Sources */,
 				3430F9AB23605499000F5AF5 /* BaseNotification.swift in Sources */,
