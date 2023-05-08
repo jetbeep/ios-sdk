@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.rootViewController = TabbarConfigurator().makeViewController()
         Log.setupTransferLogsFlow(.shake)
+        NotificationsController.shared.execute()
+        LoyaltyController.shared.start()
         return true
     }
 
