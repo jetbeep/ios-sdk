@@ -68,9 +68,7 @@ struct OfferView: View {
 
     private var thumbnailView: some View {
         if let imageUrl = offer.thumbnailUrl,
-           let url = URL(string: imageUrl),
-           let data = try? Data(contentsOf: url),
-           let image = UIImage(data: data) {
+           let url = URL(string: imageUrl) {
             if #available(iOS 15.0, *) {
                 return AnyView(
                     AsyncImage(url: url) { image in
@@ -84,7 +82,7 @@ struct OfferView: View {
                 )
             } else {
                 return AnyView(
-                    Image(uiImage: image)
+                    Image(systemName: "photo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 80, height: 80)
