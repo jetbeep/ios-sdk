@@ -76,7 +76,6 @@ class VendingViewModel: ObservableObject {
             paymentViewStatus = .notAvailable
             vendingMachines[device] = status
             disconnect()
-
         }
     }
 
