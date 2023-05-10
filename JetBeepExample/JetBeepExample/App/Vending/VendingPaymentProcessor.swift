@@ -20,7 +20,7 @@ final class VendingPaymentProcessor {
     }
 }
 
-extension VendingPaymentProcessor {
+extension VendingPaymentProcessor: PaymentProcessorProtocol {
     func pay() async throws -> PaymentSignature {
         return try await apiService.paymentCreation(paymentRequest: paymentRequest)
     }

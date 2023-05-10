@@ -101,9 +101,7 @@ class VendingViewModel: ObservableObject {
         Task {
             do {
                 let paymentProcessor = try VendingPaymentProcessor(paymentRequest: paymentRequest)
-                let signature = try await paymentProcessor.pay()
-                let confirmSignature = try await JBBeeper.shared.submitPayment(signature: signature)
-                try await paymentProcessor.confirm(signature: confirmSignature)
+                try await VendingManager.shared.apply(paymentProcessor: paymentProcessor)
                 await MainActor.run {
                     paymentViewStatus = .success
                 }
