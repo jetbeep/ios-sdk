@@ -51,16 +51,18 @@ class TabbarPresenter {
         let appToken = "50ef7956-f6d0-4524-a4db-7e33f51f0296"
         let serviceUUID = "017af"
 
-        JetBeep.shared.serverType = .production
-        JetBeep.shared.registrationType = .anonymous
-        JetBeep.shared.setup(appName: appNameKey, appTokenKey: appToken)
-        JetBeep.shared.serviceUUID = serviceUUID
-        JetBeep.shared.userNumbers = Storage.userNumbers
-
-        Log.isLoggingEnabled = true
-
         // Start advertising
         do {
+
+            let config = try JetbeepSDKConfig()
+                .add(appName: appNameKey)
+                .add(serviceUUID: serviceUUID)
+                .add(appTokenKey: appToken)
+                .build()
+
+            JetbeepSDK.setup(config: config)
+            JetbeepSDK.userNumbers = Storage.userNumbers
+
             try JBBeeper.shared.start()
         } catch {
             print(error)
@@ -73,7 +75,7 @@ class TabbarPresenter {
     func cacheData() {
         JetbeepTaskManager.shared.addAsyncTask {
             do {
-                try await JetBeep.shared.sync()
+                try await JetbeepSDK.entities.sync()
                 Log.d("cached successfully")
             } catch {
                 Log.w("unable to cache: \(error)")
@@ -87,10 +89,10 @@ class TabbarPresenter {
             .dropFirst()
             .receive(on: DispatchQueue.main)
             .sink { status in
-            if status != .bluetoothOn {
-                self.view?.showToast(message: status.description)
-            }
-        }.store(in: &subscriptions)
+                if status != .bluetoothOn {
+                    self.view?.showToast(message: status.description)
+                }
+            }.store(in: &subscriptions)
     }
 
 }
@@ -98,11 +100,11 @@ class TabbarPresenter {
 extension TabbarPresenter: TabbarPresenterProtocol {
     func instantiateViewControllers() -> [UIViewController] {
         return [
-                LocationsConfigurator().makeViewController().0,
-                LockerConfigurator().makeViewController().0,
-                LoyaltyConfigurator().makeViewController().0,
-                VendingConfigurator().makeViewController().0,
-                LogConfigurator().makeViewController().0]
+            LocationsConfigurator().makeViewController().0,
+            LockerConfigurator().makeViewController().0,
+            LoyaltyConfigurator().makeViewController().0,
+            VendingConfigurator().makeViewController().0,
+            LogConfigurator().makeViewController().0]
     }
 
 }

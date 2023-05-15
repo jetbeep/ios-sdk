@@ -28,7 +28,7 @@ final class BackgroundController {
         Task {
             do {
                 _ = try await TelemetryManager.shared.forceTelemetrySynchronization()
-                _ = try await JetBeep.shared.sync()
+                _ = try await JetbeepSDK.entities.sync()
                 Log.d("cached successfully")
                 completionHandler(.newData)
             } catch {

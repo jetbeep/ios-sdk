@@ -42,7 +42,7 @@ extension AddUserNumbersViewModel: AddUserNumbersViewModelProtocol {
 
         JetbeepTaskManager.shared.addAsyncTask {
             do {
-                try await JetBeep.shared.sync()
+                try await JetbeepSDK.entities.sync()
                 Log.i("Success sync")
             } catch {
                 Log.i("Error sync: \(error)")

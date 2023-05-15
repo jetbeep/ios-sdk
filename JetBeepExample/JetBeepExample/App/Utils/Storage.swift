@@ -42,7 +42,7 @@ class Storage {
     }
 
     private static func updateStoredNumbers(_ numbers: [String]) {
-        JetBeep.shared.userNumbers = numbers
+        JetbeepSDK.userNumbers = numbers
         userDefaults.set(numbers, forKey: userNumbersKey)
     }
 }
