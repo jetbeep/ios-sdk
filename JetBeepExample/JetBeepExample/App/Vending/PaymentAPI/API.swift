@@ -26,8 +26,7 @@ class API {
 
     // You need to add your Psp-api-key
     static var headers: [String: String] =
-    ["Application-Auth": JetBeep.shared.appToken,
-     "auth-token": JetBeep.shared.appKey,
+    ["Application-Auth": JetbeepSDK.config.appTokenKey,
      "Psp-api-key": "",
      "Content-Type": "application/json"]
 

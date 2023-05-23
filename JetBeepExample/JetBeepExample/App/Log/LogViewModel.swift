@@ -21,20 +21,18 @@ class LogViewModel: ObservableObject {
     // MARK: - Private variables
     @Published var text: String = ""
 
-    init() {
-
-        Log.logCompletion = { [weak self] newText in
-            guard let string = newText, let strongSelf = self else {
-                return
-            }
-            DispatchQueue.main.async {
-                strongSelf.text.append("\(string)\n")
-            }
-
-        }
-    }
+    private var cancellable = Set<AnyCancellable>()
 
     // MARK: - Initialization
+    init() {
+
+        Log.logPublisher.receive(on: DispatchQueue.main).sink { [weak self] newText in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.text.append("\(newText)\n")
+        }.store(in: &cancellable)
+    }
 
 }
 

@@ -55,7 +55,7 @@ class TabbarPresenter {
         do {
 
             let config = try JetbeepSDKConfig()
-                .add(appName: appNameKey)
+                .add(appNameKey: appNameKey)
                 .add(serviceUUID: serviceUUID)
                 .add(appTokenKey: appToken)
                 .build()
