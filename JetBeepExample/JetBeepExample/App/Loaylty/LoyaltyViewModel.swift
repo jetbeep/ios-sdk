@@ -124,7 +124,7 @@ class LoyaltyViewModel: ObservableObject {
     }
 
     func fetchOffers() async throws -> [Offer] {
-        return try await JetbeepSDK.entities.offers.fromCache()
+        return try await JetbeepSDK.entities.offers.fetchFromCache()
     }
 
     // MARK: - Initialization

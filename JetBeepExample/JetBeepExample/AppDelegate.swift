@@ -21,8 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationsController.shared.execute()
         LoyaltyController.shared.start()
 
-
-
         return true
     }
 

@@ -22,6 +22,7 @@ extension AddUserNumbersConfigurator: AddUserNumbersConfiguratorProtocol {
 		let viewModel = AddUserNumbersViewModel()
 		let view = AddUserNumbersView(viewModel)
         let viewController = UIHostingController(rootView: view)
+        viewController.navigationItem.title = "Coupons"
 		let router = AddUserNumbersRouter(viewController: viewController)
 		viewModel.router = router
 
