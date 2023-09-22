@@ -1,5 +1,5 @@
 
-# Jetbeep Solution Integration Guideline
+# Jetbeep Solution Integration Guideline SDK 1.x
 
 ## Hardware setup
 
@@ -15,20 +15,33 @@ At the end of the Podfile, add:
 
 ```ruby
 post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-        end
+  xcode_base_version = `xcodebuild -version | grep 'Xcode' | awk '{print $2}' | cut -d . -f 1`
+
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+
+      if config.base_configuration_reference && Integer(xcode_base_version) >= 15
+        xcconfig_path = config.base_configuration_reference.real_path
+        xcconfig = File.read(xcconfig_path)
+        xcconfig_mod = xcconfig.gsub(/DT_TOOLCHAIN_DIR/, "TOOLCHAIN_DIR")
+        File.open(xcconfig_path, "w") { |file| file << xcconfig_mod }
+      end
+
     end
+  end
 end
+
 ```
-Hotfix for Xcode 14.3
+
+**Hot fix for Xcode 15:**
+Xcode 15 bring new breaking changes. More details about them you can find [here](https://developerinsider.co/fix-xcode-15-dt_toolchain_dir-cannot-be-used-to-evaluate-library_search_paths-use-toolchain_dir-instead/)
+
+
+**Hot fix for Xcode 14.3:**
+
 Xcode 14.3 introduced breaking changes. To resolve these issues, follow the temporary solution provided in this [Stack Overflow](https://stackoverflow.com/a/75924853/1810564) post. When unzipping the missing files, ensure they are placed in the correct folder, and move them from the subfolder to the 'arc' folder.
-
-Hot fix for Xcode 14.3:
-New version bring a breaking changes to resolve it you can use next temporary solution:
-
-It's important to check a folder where you will unzip missing files. Files should be moved from subfolder to arc folder.
 
 Run the following commands:
 
