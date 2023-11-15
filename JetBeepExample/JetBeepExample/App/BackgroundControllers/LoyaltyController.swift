@@ -13,25 +13,30 @@ import Combine
 final class LoyaltyController {
 
     static let shared = LoyaltyController()
-    var subscriptions = Set<AnyCancellable>()
+    var cancellable = Set<AnyCancellable>()
 
     private init() {}
 
     func start() {
         LoyaltyManager.shared.start()
 
-        LoyaltyManager.shared
+       LoyaltyManager.shared
             .barcodeStatusTransferPublisher
             .sink { event in
                 switch event {
-                case .success(let shop, let merchant):
-                    NotificationsController.shared.triggerLocalNotification(title: "Notification was transfer successful!",
-                                                                            body: String(format: "Shop: %@, merchant: %@", shop.name, merchant.name))
-                case .failure(let shop, let merchant):
-                    NotificationsController.shared.triggerLocalNotification(title: "Notification was transfer failure",
-                                                                            body: String(format: "Shop: %@, merchant: %@", shop.name, merchant.name))
+                case let .success(shop, merchant, _, _):
+                    NotificationsController
+                        .shared
+                        .triggerLocalNotification(title: "Notification was transfer successful!",
+                                                  body: String(format: "Shop: %@, merchant: %@", shop.name, merchant.name))
+
+                case let .failure(shop, merchant, _, _):
+                    NotificationsController
+                        .shared
+                        .triggerLocalNotification(title: "Notification was transfer failure",
+                                                  body: String(format: "Shop: %@, merchant: %@", shop.name, merchant.name))
                 }
             }
-            .store(in: &subscriptions)
+            .store(in: &cancellable)
     }
 }

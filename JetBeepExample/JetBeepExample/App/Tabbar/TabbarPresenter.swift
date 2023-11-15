@@ -69,6 +69,7 @@ class TabbarPresenter {
         }
 
         subscribeForBluetoothStatus()
+        JetbeepSDK.analyticsManager.start()
 
     }
 

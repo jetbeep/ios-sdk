@@ -52,6 +52,22 @@ protocol LoyaltyViewModelProtocol: AnyObject {
 
 }
 
+extension LoyaltyManager {
+    static let shared = LoyaltyManager { _, _ in
+        if Storage.userNumbers.isEmpty {
+            return [
+                Barcode(withValue: "Please"),
+                Barcode(withValue: "add"),
+                Barcode(withValue: "Phone number"),
+                Barcode(withValue: "or"),
+                Barcode(withValue: "Loyalty card number")]
+            }
+        return Storage
+            .userNumbers
+            .map { Barcode(withValue: $0) }
+    }
+}
+
 class LoyaltyViewModel: ObservableObject {
     // MARK: - Public variables
 
@@ -70,20 +86,6 @@ class LoyaltyViewModel: ObservableObject {
 
     init() {
         LoyaltyManager.shared.start()
-
-        LoyaltyManager.shared.barcodeHandler = { _, _ in
-            if Storage.userNumbers.isEmpty {
-                return [
-                    Barcode(withValue: "Please"),
-                    Barcode(withValue: "add"),
-                    Barcode(withValue: "Phone number"),
-                    Barcode(withValue: "or"),
-                    Barcode(withValue: "Loyalty card number")]
-                }
-            return Storage
-                .userNumbers
-                .map { Barcode(withValue: $0) }
-        }
 
         LoyaltyManager
             .shared

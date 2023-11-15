@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C630540C7A3FC6FAB348414 /* Pods_JetBeepExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90ED3EE99C20F2477953DD83 /* Pods_JetBeepExample.framework */; };
 		3430F9AB23605499000F5AF5 /* BaseNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3430F9AA23605499000F5AF5 /* BaseNotification.swift */; };
 		3432777829E40A600077F122 /* VendingPaymentProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3432777729E40A600077F122 /* VendingPaymentProcessor.swift */; };
 		3432777D29E40A670077F122 /* PaymentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3432777B29E40A670077F122 /* PaymentAPI.swift */; };
@@ -60,7 +61,6 @@
 		34C351042225431000C405D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C351032225431000C405D5 /* Assets.xcassets */; };
 		34C351072225431000C405D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C351052225431000C405D5 /* LaunchScreen.storyboard */; };
 		34D91ADD29DDD1D1006143AA /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D91ADC29DDD1D1006143AA /* PaymentView.swift */; };
-		7C085FAC98677365AF1A1D8A /* Pods_JetBeepExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD95A7798E2E87B501425A4 /* Pods_JetBeepExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,9 +119,9 @@
 		34C351062225431000C405D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34C351082225431000C405D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34D91ADC29DDD1D1006143AA /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
-		6A9A5CD47F86EE20F1B0B270 /* Pods-JetBeepExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.release.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.release.xcconfig"; sourceTree = "<group>"; };
-		D3A981A1F1042FD30008E856 /* Pods-JetBeepExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.debug.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.debug.xcconfig"; sourceTree = "<group>"; };
-		DAD95A7798E2E87B501425A4 /* Pods_JetBeepExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetBeepExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		557D44882F4D7215A16A9BC3 /* Pods-JetBeepExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.release.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.release.xcconfig"; sourceTree = "<group>"; };
+		90ED3EE99C20F2477953DD83 /* Pods_JetBeepExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetBeepExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B05969FD0FABEA911E2FA858 /* Pods-JetBeepExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetBeepExample.debug.xcconfig"; path = "Target Support Files/Pods-JetBeepExample/Pods-JetBeepExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,13 +129,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C085FAC98677365AF1A1D8A /* Pods_JetBeepExample.framework in Frameworks */,
+				1C630540C7A3FC6FAB348414 /* Pods_JetBeepExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32BD3ACEAFE79BFDE0D2413B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90ED3EE99C20F2477953DD83 /* Pods_JetBeepExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3432777929E40A670077F122 /* PaymentAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,7 +324,7 @@
 				34C350FB2225430F00C405D5 /* JetBeepExample */,
 				34C350FA2225430F00C405D5 /* Products */,
 				7DA2E471FB688CC5DC81ED35 /* Pods */,
-				70F98FB6AEE44DA2651AABE4 /* Frameworks */,
+				32BD3ACEAFE79BFDE0D2413B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -343,19 +351,11 @@
 			path = JetBeepExample;
 			sourceTree = "<group>";
 		};
-		70F98FB6AEE44DA2651AABE4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DAD95A7798E2E87B501425A4 /* Pods_JetBeepExample.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		7DA2E471FB688CC5DC81ED35 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D3A981A1F1042FD30008E856 /* Pods-JetBeepExample.debug.xcconfig */,
-				6A9A5CD47F86EE20F1B0B270 /* Pods-JetBeepExample.release.xcconfig */,
+				B05969FD0FABEA911E2FA858 /* Pods-JetBeepExample.debug.xcconfig */,
+				557D44882F4D7215A16A9BC3 /* Pods-JetBeepExample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -367,12 +367,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34C3510B2225431000C405D5 /* Build configuration list for PBXNativeTarget "JetBeepExample" */;
 			buildPhases = (
-				E20C62091DC5AE4D9415DA18 /* [CP] Check Pods Manifest.lock */,
+				873097874CF6917419730C2A /* [CP] Check Pods Manifest.lock */,
 				34C350F52225430F00C405D5 /* Sources */,
 				34C350F62225430F00C405D5 /* Frameworks */,
 				34C350F72225430F00C405D5 /* Resources */,
 				34EFBC7C29E5B79B0086DB4A /* ShellScript */,
-				FEA73BFC4646E56E11189A78 /* [CP] Embed Pods Frameworks */,
+				955A611A092EDBEF296B5A92 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -447,7 +447,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		E20C62091DC5AE4D9415DA18 /* [CP] Check Pods Manifest.lock */ = {
+		873097874CF6917419730C2A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -469,7 +469,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FEA73BFC4646E56E11189A78 /* [CP] Embed Pods Frameworks */ = {
+		955A611A092EDBEF296B5A92 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -686,7 +686,7 @@
 		};
 		34C3510C2225431000C405D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3A981A1F1042FD30008E856 /* Pods-JetBeepExample.debug.xcconfig */;
+			baseConfigurationReference = B05969FD0FABEA911E2FA858 /* Pods-JetBeepExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -707,7 +707,7 @@
 		};
 		34C3510D2225431000C405D5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A9A5CD47F86EE20F1B0B270 /* Pods-JetBeepExample.release.xcconfig */;
+			baseConfigurationReference = 557D44882F4D7215A16A9BC3 /* Pods-JetBeepExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

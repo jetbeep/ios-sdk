@@ -124,6 +124,7 @@ extension LockerViewModel: LockerViewModelProtocol {
     func startSearch() {
 
         LockerManager.shared.start()
+
         LockerManager.shared
             .lockersStatusPublisher
             .receive(on: DispatchQueue.main)

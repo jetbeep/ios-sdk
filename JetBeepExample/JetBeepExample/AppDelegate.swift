@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         JetbeepSDK.logger.autoSendLogsOnShake()
         NotificationsController.shared.execute()
-        LoyaltyController.shared.start()
 
         return true
     }
