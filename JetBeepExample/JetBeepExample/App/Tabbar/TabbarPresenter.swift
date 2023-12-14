@@ -62,8 +62,8 @@ class TabbarPresenter {
 
             JetbeepSDK.setup(config: config)
             JetbeepSDK.userNumbers = Storage.userNumbers
+            LocationsManager().start()
 
-            try JBBeeper.shared.start()
         } catch {
             print(error)
         }
