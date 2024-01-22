@@ -48,6 +48,7 @@ class LockerViewModel: ObservableObject {
     @Published var tokenInput: String = ""
     @Published var tokenResult: String = ""
     @Published var deviceNearby: [LockerDevice] = []
+    @Published var isMassiveAttackActivated = false
 
     var inputTokenPublisher = PassthroughSubject<String, Never>()
 
@@ -114,7 +115,49 @@ extension LockerViewModel: LockerViewModelProtocol {
         }
     }
 
+    func tapOnMassiveAttack() {
+        isMassiveAttackActivated.toggle()
+        massiveAttack()
+    }
+
+    func massiveAttack() {
+        if isMassiveAttackActivated {
+            infinityTokenApplyLoop()
+        }
+
+    }
+
+    func infinityTokenApplyLoop() {
+        guard let token = createTokenFromInputField() else {
+            return
+        }
+        tokenResult = ""
+
+        Task {
+            do {
+                let result = try await LockerManager
+                    .shared
+                    .apply(token)
+                    .result
+                    .toHexString()
+
+                DispatchQueue.main.async {
+                    self.tokenResult = result
+                    self.massiveAttack()
+                }
+
+            } catch {
+                Log.i("Apply finished with error \(error)")
+                DispatchQueue.main.async {
+                    self.massiveAttack()
+                }
+            }
+        }
+
+    }
+
     func stopSearch() {
+        isMassiveAttackActivated = false
         LockerManager.shared.stop()
         eraseTokenField()
         eraseTokenResultField()

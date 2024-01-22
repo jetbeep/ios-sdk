@@ -95,6 +95,7 @@ struct LockerView: View {
             tokenResult
             searchButton
             applyButton
+            massiveAttack
             stopButton
             nearbyDevices
         }
@@ -140,6 +141,14 @@ struct LockerView: View {
         .buttonStyle(ActionButtonStyle())
         .disabled(!viewModel.isApplyButtonEnabled)
         .opacity(viewModel.isApplyButtonEnabled ? 1 : 0.5)
+    }
+
+    var massiveAttack: some View {
+        return Button(viewModel.isMassiveAttackActivated ? "Pause Massive Attack" : "Start Massive Attack") {
+            viewModel.tapOnMassiveAttack()
+            UIApplication.shared.endEditing()
+        }
+        .buttonStyle(ActionButtonStyle())
     }
 
     var stopButton: some View {
